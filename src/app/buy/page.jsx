@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-
+import BuySlide from '../components/BuySlide/BuySlide'
 
 import Header from '../components/Header/Header'
 const page = () => {
@@ -37,6 +37,7 @@ const page = () => {
     </div>
 </section>
 
+<BuySlide/>
 </>
   )
 }
