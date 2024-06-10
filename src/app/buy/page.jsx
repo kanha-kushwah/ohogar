@@ -6,6 +6,8 @@ import BuySlide from '../components/BuySlide/BuySlide'
 import Header from '../components/Header/Header'
 import BuyFeatured from '../components/BuyFeatured/BuyFeatured'
 import BuyProperties from '../components/BuyProperties/BuyProperties'
+import BuyCollection from '../components/BuyCollection/BuyCollection'
+import BuyFive from '../components/BuyFive/BuyFive'
 
 
 const page = () => {
@@ -51,6 +53,8 @@ const page = () => {
             <BuySlide />
             <BuyFeatured/>
             <BuyProperties/>
+            <BuyCollection/>
+            <BuyFive/>
         </>
     )
 }
