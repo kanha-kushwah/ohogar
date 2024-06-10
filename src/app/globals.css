@@ -332,4 +332,48 @@ h3.heading-h3 {
   padding: 14px 20px;
   border-radius: 0px 0px 20px 20px;
 } 
+.po-re{
+  position: relative;
+}
+
+.po-re:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  z-index: 0;
+  border-radius: 26px;
+  bottom: 0;
+}
+.buy-slider img {
+  position: relative;
+  border-radius: 26px;
+}
+.box-overlap {
+  z-index: 9;
+}
+
+#collection .swiper.swiper-initialized {
+  padding-bottom: 40px;
+}
+section#banner-five {
+  background: url(/img/banner-showcase.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px 0px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: calc((100% - 30px) / 2) !important;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* buy css end */

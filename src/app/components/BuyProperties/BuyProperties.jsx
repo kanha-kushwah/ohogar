@@ -29,12 +29,12 @@ const BuyProperties = () => {
             }}
             loop={true}
             
-            pagination={{ clickable: true }}
+            // pagination={{ clickable: true }}
           >
               
             <SwiperSlide>
               <div className="property">
-                <Image style={{ width: '100%', height: '100%' }} src="/img/buy-slide-one.jpg" alt="Logo" width={600} height={347} />
+                <Image style={{ width: '100%', height: '100%' }} src="/img/Properties-one.jpg" alt="Logo" width={600} height={347} />
                 <div className="box-nonoverlap">
                   <div className="inner-one">
                   <h3>Swadesh Orchard Valley</h3>
@@ -51,7 +51,7 @@ const BuyProperties = () => {
             </SwiperSlide>
             <SwiperSlide>
               <div className="property">
-                <Image style={{ width: '100%', height: '100%' }} src="/img/buy-slide-two.jpg" alt="Logo" width={600} height={347} />
+                <Image style={{ width: '100%', height: '100%' }} src="/img/Properties-two.jpg" alt="Logo" width={600} height={347} />
                 <div className="box-nonoverlap">
                   <div className="inner-one">
                   <h3>Swadesh Orchard Valley</h3>
@@ -68,7 +68,7 @@ const BuyProperties = () => {
             </SwiperSlide>
             <SwiperSlide>
               <div className="property">
-                <Image style={{ width: '100%', height: '100%' }} src="/img/buy-slide-one.jpg" alt="Logo" width={600} height={347} />
+                <Image style={{ width: '100%', height: '100%' }} src="/img/Properties-three.jpg" alt="Logo" width={600} height={347} />
                 <div className="box-nonoverlap">
                   <div className="inner-one">
                   <h3>Swadesh Orchard Valley</h3>
@@ -85,7 +85,7 @@ const BuyProperties = () => {
             </SwiperSlide>
             <SwiperSlide>
               <div className="property">
-                <Image style={{ width: '100%', height: '100%' }} src="/img/buy-slide-one.jpg" alt="Logo" width={600} height={347} />
+                <Image style={{ width: '100%', height: '100%' }} src="/img/Properties-two.jpg" alt="Logo" width={600} height={347} />
                 <div className="box-nonoverlap">
                   <div className="inner-one">
                   <h3>Swadesh Orchard Valley</h3>
