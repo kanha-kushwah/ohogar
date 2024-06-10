@@ -24,10 +24,14 @@ const page = () => {
                     </ul>
                  </div>
                  <div className="serch-box d-flex">
-                        <button>select city</button>
-                        <button className='search-btn'>Search</button>
+                                <select class="form-select border-0" aria-label="Default select example">
+                                    <option selected>Select City</option>
+                                    <option value="1">Indore</option>
+                                    <option value="2">Bhopal</option>
+                                </select>
+                                <button className='search-btn'>Search</button>
 
-                    </div>
+                            </div>
 
                     <div className="box-ex text-center">
                         <span>Are you an Owner?<u> Post property for free</u></span>
