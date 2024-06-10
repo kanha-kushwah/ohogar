@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 
 import Header from '../components/Header/Header'
+import BuySlide from '../components/BuySlide/BuySlide'
 const page = () => {
   return (
 <>
@@ -12,14 +13,14 @@ const page = () => {
     <div className="container ">
         <div className="row align-items-center justify-content-center banner-buy land-banner">
             <div className="col-md-7">
-               <h1 className='text-white'>Commercial Real Estate in Bhopal</h1>
+               <h1 className='text-white heding-xxl mt-5'>Commercial Real Estate in Bhopal</h1>
                  
-                 <div className="nav-box">
+                 <div className="nav-box mt-md-4">
                     <ul className='p-0 d-flex'>  
                         <li>  <Link href="/">Buy</Link></li>
                         <li> <Link href="rent">Rent</Link> </li>
-                        <li> <Link href="commercial">Commercial</Link> </li>
-                        <li> <Link href="lands">Lands</Link> </li>
+                        <li> <Link  href="commercial">Commercial</Link> </li>
+                        <li> <Link  className='active' href="lands">Lands</Link> </li>
 
                     </ul>
                  </div>
@@ -40,7 +41,7 @@ const page = () => {
         </div>
     </div>
 </section>
-
+<BuySlide/>
 </>
   )
 }
