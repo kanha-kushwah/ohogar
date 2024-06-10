@@ -3,14 +3,13 @@
 import React from 'react'
 import Link from 'next/link'
 import BuySlide from '../components/BuySlide/BuySlide'
-import { usePathname } from 'next/navigation'
 import Header from '../components/Header/Header'
 import BuyFeatured from '../components/BuyFeatured/BuyFeatured'
 import BuyProperties from '../components/BuyProperties/BuyProperties'
 
 
 const page = () => {
-    const pathname = usePathname()
+
 
     return (
         <>
