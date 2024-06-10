@@ -1,9 +1,17 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import BuySlide from '../components/BuySlide/BuySlide'
-
+import { usePathname } from 'next/navigation'
 import Header from '../components/Header/Header'
+import BuyFeatured from '../components/BuyFeatured/BuyFeatured'
+import BuyProperties from '../components/BuyProperties/BuyProperties'
+
+
 const page = () => {
+    const pathname = usePathname()
+
     return (
         <>
             <Header />
@@ -12,13 +20,13 @@ const page = () => {
                 <div className="container ">
                     <div className="row align-items-center justify-content-center banner-buy buy-banner">
                         <div className="col-md-7">
-                            <h1 className='text-white'>Trusted Place to Find a Home</h1>
+                            <h1 className='text-white heding-xxl mt-5'>Trusted Place to Find a Home</h1>
 
-                            <div className="nav-box">
+                            <div className="nav-box mt-md-4">
                                 <ul className='p-0 d-flex'>
-                                    <li>  <Link href="/">Buy</Link></li>
+                                    <li > <Link className="active" href="/">Buy</Link></li>
                                     <li> <Link href="rent">Rent</Link> </li>
-                                    <li> <Link href="commercial">Commercial</Link> </li>
+                                    <li> <Link  href="commercial">Commercial</Link> </li>
                                     <li> <Link href="lands">Lands</Link> </li>
 
                                 </ul>
@@ -34,7 +42,7 @@ const page = () => {
                             </div>
 
                             <div className="box-ex text-center">
-                                <span>Are you an Owner?<u> Post property for free</u></span>
+                                <span>Are you an Owner?<u> <b>Post property for free </b></u> </span>
                             </div>
                         </div>
                     </div>
@@ -42,6 +50,8 @@ const page = () => {
             </section>
 
             <BuySlide />
+            <BuyFeatured/>
+            <BuyProperties/>
         </>
     )
 }
