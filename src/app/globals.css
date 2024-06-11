@@ -466,3 +466,82 @@ line-height: 24.59px;
 color: #313265;
 }
 /* buy css end */
+
+.five-slider-h2 {
+  font-family: 'Manrope';
+  font-size: 18.01px;
+  font-weight: 800;
+  line-height: 24.6px;
+  margin-top: 35px;
+}
+.five-slider-h3 {
+  font-family: 'Manrope';
+  font-size: 18.01px;
+  font-weight: 600;
+  line-height: 24.6px;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.five-slider-h6 {
+  font-family: 'Manrope';
+  font-size: 12.86px;
+  font-weight: 400;
+  line-height: 16.08px;
+  text-align: left;
+  color: #BBBBC0;
+}
+
+.five-slider-small {
+    font-family: 'Manrope';
+    font-size: 10.29px;
+    font-weight: 400;
+    line-height: 12.86px;
+    text-align: left;
+    color: #BBBBC0;
+}
+
+#banner-five img {
+  position: relative;
+  border-radius: 16px !important;
+}
+.off-white{
+  color: #FFFFFFB2 !important;
+}
+#banner-five  .box-overlap{
+  padding: 0px 18px;
+}
+
+
+/* footer */
+#footer {
+  background: #313265;
+  padding: 100px 0px;
+}
+#footer p{
+margin: 0;
+font-family: "Manrope";
+font-size: 14px;
+font-weight: 400;
+line-height: 22px;
+text-align: left;
+color: #ffffff8a;
+}
+ul.footer-list {
+  padding: 0;
+  margin: 0;
+}
+ul.footer-list li {
+list-style: none;
+font-family: 'Manrope';
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+color: #ffffffa4;
+}
+.li-mb li {
+  margin-bottom: 20px;
+}
+*{
+  font-family: 'Manrope';
+}
+/* footer */

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <section id="footer">
       <div className="container-footer">
-        <div className="row py-4 text-white justify-content-between">
+        <div className="row text-white justify-content-between">
           <div className="col-md-4">
             <b></b>
             <div>
@@ -15,7 +15,7 @@ const Footer = () => {
                 height={50}
                 width={165}
               />
-              <ul className="d-flex g-20">
+              <ul className="d-flex g-20 py-4 footer-list">
                 <li>Facebook</li> <li>Instagram</li> <li>Linkedin</li>{" "}
                 <li>Pinterest</li>{" "}
               </ul>
@@ -39,7 +39,7 @@ const Footer = () => {
 
           <div className="col-md-2">
             <b>Quick links</b>{" "}
-            <ul>
+            <ul className="mt-5 footer-list li-mb">
               <li>Buy</li>
               <li>Rent</li>
               <li>Commercial</li>
@@ -51,16 +51,16 @@ const Footer = () => {
             <div>
               {" "}
               <b>Company</b>
-              <ul>
-                <li>anha</li>
-                <li>kushwa </li>
+              <ul  className="mt-5 footer-list li-mb">
+                <li>About us</li>
+                <li>List Property </li>
               </ul>
             </div>{" "}
           </div>
           {/* <div className="col-md-1"></div> */}
           <div className="col-md-2">
             {" "}
-            <div>
+            <div className="mb-5">
               {" "}
               <b>Address</b>
             </div>
@@ -75,11 +75,11 @@ const Footer = () => {
             />
           </div>
 
-          <div className="col-md-12 d-flex justify-content-betwwen">
-            <div className="col">© 2024 Ohogar.All right reserved</div>
+          <div className="col-md-12 d-flex justify-content-between mt-5">
+            <div className="col"><p>© 2024 Ohogar.All right reserved</p></div>
             <div className="col justify-content-end">
               <div className="d-flex justify-content-end">
-                <p>Terms & Conditions</p> <p>Privacy Policies</p>
+                <p className="me-3">Terms & Conditions</p> <p>Privacy Policies</p>
               </div>
             </div>
           </div>
