@@ -14,8 +14,8 @@ const BuyCollection = () => {
       <section className="buy-slider" id="collection"> 
         <div className="container">
           <div className="row mb-md-4 align-items-center">
-            <div className="col-md-11"><h2 className="heading-xl">Featured <b>Collection</b></h2> <p className="paragraph">Exclusive showcase of top projects</p></div>
-            <div className="col-md-1"><div className="d-flex justify-content-between"> <Image className="pointer swiper-button-prev3" src="/img/left-arrow.svg" alt="Logo" width={40}
+            <div className="col-md-10"><h2 className="heading-xl">Featured <b>Collection</b></h2> <p className="paragraph">Exclusive showcase of top projects</p></div>
+            <div className="col-md-2"><div className="d-flex justify-content-end"> <Image className="me-2 pointer swiper-button-prev3" src="/img/left-arrow.svg" alt="Logo" width={40}
               height={40} />  <Image className="pointer swiper-button-next3" src="/img/right-arrow.svg" alt="Logo" width={40}
                 height={40} /></div> </div>
           </div>
@@ -37,7 +37,7 @@ const BuyCollection = () => {
                 <Image  style={{ width: '100%', height: '100%' }}  src="/img/Collection-one.jpg" alt="Logo" width={600} height={347} />
                 <div className="box-overlap  w-100">
                   <div className="inner-one text-center w-100">
-                  <h3>Swadesh Orchard Valley</h3>
+                  <h3 >Swadesh Orchard Valley</h3>
                   <h6>By Swadesh Developers</h6>
                   </div>
               

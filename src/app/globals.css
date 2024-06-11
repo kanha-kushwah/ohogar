@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 /* :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -97,8 +99,7 @@ a {
     color-scheme: dark;
   }
 } */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 
 section#header {
   position: absolute;
@@ -288,11 +289,9 @@ img.pointer {
 body {
   background: #F2F3F8 !important;
 }
+
 .outer-slider {
-  background: #fff;
-}
-.outer-slider {
-  background: #fff;
+  background: #f9f9f9;
   padding: 20px;
   border-radius: 20px;
 }
@@ -313,7 +312,6 @@ h3.heading-h3 {
   font-size: 20px;
   font-weight: 600;
   line-height: 25px;
-  text-align: left;
   color: #313265;
 }
 .inner-box h4 {
@@ -366,14 +364,105 @@ section#banner-five {
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
   height: calc((100% - 30px) / 2) !important;
+}
+#banner-five .swiper-grid-column > .swiper-wrapper {
+  flex-direction: row;
+}
+#banner-five .swiper-slide {
+  margin: 0px 15px 40px 15px !important;
+}
+.box-featured{
+  position: absolute;
+  bottom: 0;
+  padding: 14px;
+}
 
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.sub-heading-regular{
+  font-family: "Manrope", sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.peragraph-regular{
+  font-family: "Manrope", sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  color: #BBBBC0;
+  margin-bottom: 8px;
+}
+.sub-heading-bold{
+  font-family: "Manrope", sans-serif;
+  font-size: 8px;
+  font-weight: 800;
+}
+#featured img {
+  border-radius: 0px !important;
+}
+#featured .nav-link {
+  padding:  0px 0px 10px 0px;
+  margin: 0px 20px 0px 0px;
+  background: transparent;
+  border: none;
+  font-weight: 500;
+  color: #9C9DF2;
+}
+.nav-link.active {
+  color: #313265 !important;
+  border-bottom: 2px solid !important;
+
+}
+#nav-tab{
+  border: none;
+}
+.frea-p-small{
+  font-size: 12px;
+  color:#6B6B7DB2;
+  ;
+}
+.frea-p {
+color: #6B6B7DB2;
+font-size: 14px;
+font-weight: 500;
+line-height: 17.5px;
+text-align: left;
+font-family: 'Manrope';
+}
+
+.small-sub-heading{
+font-family: 'Manrope';
+font-size: 14px;
+font-weight: 600;
+line-height: 19.12px;
+text-align: left;
+color: #313265;
+}
+
+#collection .swiper-pagination-bullet-active {
+  background: #E90000 !important;
+}
+
+#footer{
+  background: #313265;
+}
+.container-footer{
+  max-width: 1082px;
+  width: 100%;
+  margin: auto;
+}
+#rent-sales img {
+  position: relative;
+  border-radius: 15px 15px 0 0;
+}
+
+.co-blue {
+  color: #313265;
+}
+.f-eigthy{
+font-family: "Manrope";
+font-size: 18px;
+font-weight: 700;
+line-height: 24.59px;
+color: #313265;
 }
 /* buy css end */

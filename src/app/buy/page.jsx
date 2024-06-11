@@ -8,6 +8,7 @@ import BuyFeatured from '../components/BuyFeatured/BuyFeatured'
 import BuyProperties from '../components/BuyProperties/BuyProperties'
 import BuyCollection from '../components/BuyCollection/BuyCollection'
 import BuyFive from '../components/BuyFive/BuyFive'
+import Footer from '../components/Footer/Footer'
 
 
 const page = () => {
@@ -55,6 +56,9 @@ const page = () => {
             <BuyProperties/>
             <BuyCollection/>
             <BuyFive/>
+            <BuyProperties/>
+            <BuyFeatured/>
+            <Footer/>
         </>
     )
 }
