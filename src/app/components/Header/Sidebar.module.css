@@ -1,0 +1,37 @@
+.sidebar {
+    width: 656px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #F2F3F8;
+    box-shadow: 0px 4px 27.2px 0px #00000040;
+    height: 100%;
+    padding: 20px;
+    z-index: 1001;
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0); /* Slide in */
+  }
+  
+  .backdrop {
+    display: none; /* Hide initially */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0; /* Start transparent */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .backdrop.open {
+    display: block; /* Ensure it's visible */
+    opacity: 1; /* Fade in */
+  }
+
+  

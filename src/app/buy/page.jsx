@@ -22,7 +22,7 @@ const page = () => {
                 <div className="container ">
                     <div className="row align-items-center justify-content-center banner-buy buy-banner">
                         <div className="col-md-7">
-                            <h1 className='text-white heding-xxl mt-5'>Trusted Place to Find a Home</h1>
+                            <h1 className='text-white heding-xxl mt-5' >Trusted Place to Find a Home</h1>
 
                             <div className="nav-box mt-md-4">
                                 <ul className='p-0 d-flex'>

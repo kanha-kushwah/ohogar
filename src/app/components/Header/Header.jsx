@@ -1,13 +1,35 @@
-import React from "react";
+"use client"
+import React,{useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Sidebar from "../Sidebar/Sidebar";
+import styles from './Sidebar.module.css';
+
 
 
 const Header = () => {
 
+
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const opensidebar = () => {
+      setIsOpen(true);
+    };
+  
+    const closebar = () => {
+      setIsOpen(false);
+    }
+  
+console.log(isOpen)
   return (
     <>
-      <section id="header">
+<div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
+        {/* <button onClick={closebar}>Close Sidebar</button> */}
+   <Sidebar/>
+      </div>
+      <div className={`${styles.backdrop} ${isOpen ? styles.open : ''}`} onClick={closebar}></div>
+
+      <section id="header" >
         <div className="container">
           <div className="row py-md-4 px-md-5">
             <div className="col-md-4 col-4">
@@ -38,8 +60,8 @@ const Header = () => {
                 </div>
                 <div className="col-select">
                <div className="d-flex smart-phone bo-ra-full align-items-center justify-content-center">
-                <Image className="me-2" src="img/menu.svg" alt="menu" height={28} width={28}  />
-                <Image src="img/user.svg" alt="user" height={28} width={28} />
+                <Image onClick={opensidebar} className="pointer me-2" src="img/menu.svg" alt="menu" height={28} width={28}  />
+                <Image className="pointer" src="img/user.svg" alt="user" height={28} width={28} />
 
                </div>
                 </div>

@@ -13,7 +13,8 @@ const BuyCollection = () => {
     <>
       <section className="buy-slider" id="collection"> 
         <div className="container">
-          <div className="row mb-md-4 align-items-center">
+          <div className="row mb-md-4 align-items-center" data-aos="fade-up"
+     data-aos-duration="1000">
             <div className="col-md-10"><h2 className="heading-xl">Featured <b>Collection</b></h2> <p className="paragraph">Exclusive showcase of top projects</p></div>
             <div className="col-md-2"><div className="d-flex justify-content-end"> <Image className="me-2 pointer swiper-button-prev3" src="/img/left-arrow.svg" alt="Logo" width={40}
               height={40} />  <Image className="pointer swiper-button-next3" src="/img/right-arrow.svg" alt="Logo" width={40}

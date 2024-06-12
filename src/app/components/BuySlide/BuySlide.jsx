@@ -13,9 +13,11 @@ const BuySlide = () => {
     <>
       <section className="buy-slider">
         <div className="container">
-          <div className="row mb-md-4 align-items-center">
-            <div className="col-md-10"><h2 className="heading-xl">Project in <b>Focus</b></h2> <p className="paragraph">Noteworthy projects in <b>Bhopal</b></p></div>
-            <div className="col-md-2"><div className="d-flex justify-content-end "> <Image className="me-2 pointer swiper-button-prev1 " src="/img/left-arrow.svg" alt="Logo" width={40}
+          <div className="row mb-md-4 align-items-center"  data-aos="fade-up"
+     data-aos-duration="1000">
+            <div className="col-md-10"><h2 className="heading-xl" 
+>Project in <b>Focus</b></h2> <p className="paragraph" >Noteworthy projects in <b>Bhopal</b></p></div>
+            <div className="col-md-2"><div className="d-flex justify-content-end "> <Image  className="me-2 pointer swiper-button-prev1 " src="/img/left-arrow.svg" alt="Logo" width={40}
               height={40} />  <Image className="pointer swiper-button-next1" src="/img/right-arrow.svg" alt="Logo" width={40}
                 height={40} /></div> </div>
           </div>
@@ -32,10 +34,10 @@ const BuySlide = () => {
             // pagination={{ clickable: true }}
           >
               
-            <SwiperSlide>
+            <SwiperSlide >
               <div className="d-flex">
                 <Image style={{ width: '100%', height: '100%' }} src="/img/buy-slide-one.jpg" alt="Logo" width={600} height={347} />
-                <div className="box-overlap">
+                <div className="box-overlap" >
                   <div className="inner-one">
                   <h3>Swadesh Orchard Valley</h3>
                   <h6>By Swadesh Developers</h6>
