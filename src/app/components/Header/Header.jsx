@@ -32,7 +32,7 @@ console.log(isOpen)
       <section id="header" >
         <div className="container">
           <div className="row py-md-4 px-md-5">
-            <div className="col-md-4 col-4">
+            <div className="col-md-2 col-2">
               <div className="logo">
                 <Link href="/">
                   <Image src="img/Logo.svg" alt="Logo" width={103}
@@ -40,7 +40,7 @@ console.log(isOpen)
                 </Link>{" "}
               </div>
             </div>
-            <div className="col-md-8 col-8 align-self-end">
+            <div className="col-md-10 col-10 align-self-end">
               <div className="d-flex justify-content-end heder-gap align-items-center">
                 <div className="col-select">
                  <div className="map smart-phone d-flex align-items-center"> <Image src="/img/map.svg" height={20} width={20} alt="icon" />

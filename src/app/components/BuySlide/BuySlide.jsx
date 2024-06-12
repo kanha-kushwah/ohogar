@@ -22,6 +22,7 @@ const BuySlide = () => {
                 height={40} /></div> </div>
           </div>
           <Swiper
+          
             modules={[Navigation, Pagination]}
             spaceBetween={50}
             slidesPerView={2}
@@ -30,7 +31,21 @@ const BuySlide = () => {
               nextEl: '.swiper-button-next1',
             }}
             loop={true}
-            
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              400:{
+                slidesPerView:1,
+              },
+              865: {
+                slidesPerView: 2,
+              },
+              1000:{
+                slidesPerView:2
+              },
+             
+            }}
             // pagination={{ clickable: true }}
           >
               

@@ -592,6 +592,92 @@ color: #ffffffa4;
 
 .sidebar-box {
   background: #FFFFFF;
-  padding: 20px;
+  padding: 20px !important;
   border-radius: 12px;
+}
+.box-active.active:after {
+  content: "";
+  border: solid 3px;
+  width: 88%;
+  position: absolute;
+  left: 6%;
+  bottom: -1px;
+  border-radius: 12px;
+  margin: auto;
+}
+.box-active {
+  padding: 14px;
+  border-radius: 11px;
+  background: #F2F3F8;
+  position: relative;
+}
+.box-active.active {
+  border: 1px solid #313265
+}
+p.box-help {
+  background: #E5E9FF;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  margin: 0;
+}
+#sldierbar button.accordion-button {
+  padding: 2px 0px;
+  border: none !important;
+  background: transparent;
+  box-shadow: none;
+}
+#sldierbar .accordion-body {
+  padding: 10px 0px;
+}
+#sldierbar .accordion-item {
+  border: none;
+  margin-bottom: 5px;
+}
+
+button.btn-login {
+  background: #fff;
+  border: none;
+  margin-top: 20px;
+  padding: 12px 50px;
+  margin-bottom: 14px;
+  border-radius: 50px;
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.86px;
+  text-align: left;
+  color: #313265;
+}
+
+#moadal.modal-dialog.modal-dialog-centered {
+  max-width: 750px !important;
+}
+#moadal .modal-body {
+  padding: 40px 40px;
+  background: #F2F3F8;
+}
+button.start-btn {
+  background: #313265;
+  color: #fff;
+  padding: 17px;
+  width: 93%;
+  border: none;
+  border-radius: 12px;
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 17px;
+} 
+
+@media (max-width:1400px) {
+  .container {
+    max-width: 92% !important;
+}
+.container-footer {
+  max-width: 1082px;
+  margin: auto;
+  padding: 0px 20px;
+}
 }

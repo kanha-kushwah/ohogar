@@ -29,7 +29,20 @@ const BuyProperties = () => {
               nextEl: '.swiper-button-next2',
             }}
             loop={true}
-            
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              400:{
+                slidesPerView:1,
+              },
+              865: {
+                slidesPerView: 2,
+              },
+              1000:{
+                slidesPerView:3
+              },
+            }}
             // pagination={{ clickable: true }}
           >
               

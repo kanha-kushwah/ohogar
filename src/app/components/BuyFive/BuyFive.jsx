@@ -32,6 +32,19 @@ const BuyFive = () => {
               prevEl: '.swiper-button-prev1',
               nextEl: '.swiper-button-next1',
             }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              400:{
+                slidesPerView:1,
+              },
+              865: {  
+                slidesPerView: 2,
+              },
+              1000:{
+                slidesPerView:3
+              },}}
             loop={true}
             
             // pagination={{ clickable: true }}
