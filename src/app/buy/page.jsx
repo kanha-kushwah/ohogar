@@ -9,7 +9,6 @@ import BuyProperties from '../components/BuyProperties/BuyProperties'
 import BuyCollection from '../components/BuyCollection/BuyCollection'
 import BuyFive from '../components/BuyFive/BuyFive'
 import Footer from '../components/Footer/Footer'
-import GetStart from '../components/Modal/getstart'
 import Dailloge from '../components/Dailoge/Dailloge'
 
 
