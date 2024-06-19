@@ -14,8 +14,8 @@ const BuyFeatured = () => {
       <section className="buy-slider" id="featured">
         <div className="container">
           <div className="row mb-md-4 align-items-center" data-aos="fade-up"
-     data-aos-duration="1000">
-            <div className="col-md-10">
+     data-aos-duration="1000"> 
+            <div className="col-md-10 col-10">
               <h2 className="heading-xl">
                 Featured <b>Developers</b>
               </h2>{" "}
@@ -23,11 +23,11 @@ const BuyFeatured = () => {
                 Prominent developers in <b>Bhopal</b>
               </p>
             </div>
-            <div className="col-md-2">
-              <div className="d-flex justify-content-end">
+            <div className="col-md-2 col-2">
+              <div className="d-flex justify-content-end arrow-slider">
                 {" "}
                 <Image
-                  className="pointer swiper-button-prev5 me-2"
+                  className="pointer swiper-button-prev5 me-2 "
                   src="/img/left-arrow.svg"
                   alt="Logo"
                   width={40}

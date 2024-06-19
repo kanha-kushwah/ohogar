@@ -13,10 +13,10 @@ const BuyProperties = () => {
     <>
       <section className="buy-slider" id="rent-sales">
         <div className="container">
-          <div className="row mb-md-4 align-items-center" data-aos="fade-up"
+          <div className="row mb-md-4 align-items-center " data-aos="fade-up"
      data-aos-duration="1000">
-            <div className="col-md-10"><h2 className="heading-xl">Properties for Rent / Sales</h2> <p className="paragraph">Exclusive showcase of top projects</p></div>
-            <div className="col-md-2"><div className="d-flex justify-content-end"> <Image className="pointer swiper-button-prev2 me-2" src="/img/left-arrow.svg" alt="Logo" width={40}
+            <div className="col-md-10 col-10"><h2 className="heading-xl">Properties for Rent / Sales</h2> <p className="paragraph">Exclusive showcase of top projects</p></div>
+            <div className="col-md-2 col-2"><div className="d-flex justify-content-end arrow-slider"> <Image className="pointer swiper-button-prev2 me-2" src="/img/left-arrow.svg" alt="Logo" width={40}
               height={40} />  <Image className="pointer swiper-button-next2" src="/img/right-arrow.svg" alt="Logo" width={40}
                 height={40} /></div> </div>
           </div>
