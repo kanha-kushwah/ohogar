@@ -1,0 +1,13 @@
+
+.highlight label.form-check-label {
+    color: #fff !important;
+    background: #CB78F3 !important; 
+    padding: 12px 0px;
+    width: 190px;
+    text-align: center;
+    height: 48px;
+    border-radius: 8px;  
+font-size: 16px;
+font-weight: 700;
+line-height: 21.86px;
+}

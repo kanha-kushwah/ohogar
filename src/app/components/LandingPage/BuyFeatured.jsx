@@ -98,9 +98,9 @@ const BuyFeatured = () => {
                   Bhopal It completed 30+ project including flats
                 </p>
                 <nav>
-                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <div className="nav nav-tabs" id="nav-tab" role="tablist">
                     <button
-                      class="nav-link active"
+                      className="nav-link active"
                       id="nav-home-tab"
                       data-bs-toggle="tab"
                       data-bs-target="#nav-home"
@@ -112,7 +112,7 @@ const BuyFeatured = () => {
                       Sage Milestone
                     </button>
                     <button
-                      class="nav-link"
+                      className="nav-link"
                       id="nav-profile-tab"
                       data-bs-toggle="tab"
                       data-bs-target="#nav-profile"
@@ -125,9 +125,9 @@ const BuyFeatured = () => {
                     </button>
                   </div>
                 </nav>
-                <div class="tab-content" id="nav-tabContent">
+                <div className="tab-content" id="nav-tabContent">
                   <div
-                    class="tab-pane fade show active"
+                    className="tab-pane fade show active"
                     id="nav-home"
                     role="tabpanel"
                     aria-labelledby="nav-home-tab"
@@ -230,7 +230,7 @@ const BuyFeatured = () => {
                   </div>
 
                   <div
-                    class="tab-pane fade"
+                    className="tab-pane fade"
                     id="nav-profile"
                     role="tabpanel"
                     aria-labelledby="nav-profile-tab"
@@ -273,9 +273,9 @@ const BuyFeatured = () => {
                   Bhopal It completed 30+ project including flats
                 </p>
                 <nav>
-                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <div className="nav nav-tabs" id="nav-tab" role="tablist">
                     <button
-                      class="nav-link active"
+                      className="nav-link active"
                       id="nav-home-tab1"
                       data-bs-toggle="tab"
                       data-bs-target="#nav-home1"
@@ -287,7 +287,7 @@ const BuyFeatured = () => {
                       Sage Milestone
                     </button>
                     <button
-                      class="nav-link"
+                      className="nav-link"
                       id="nav-profile-tab1"
                       data-bs-toggle="tab"
                       data-bs-target="#nav-profile1"
@@ -300,9 +300,9 @@ const BuyFeatured = () => {
                     </button>
                   </div>
                 </nav>
-                <div class="tab-content" id="nav-tabContent">
+                <div className="tab-content" id="nav-tabContent">
                   <div
-                    class="tab-pane fade show active"
+                    className="tab-pane fade show active"
                     id="nav-home1"
                     role="tabpanel"
                     aria-labelledby="nav-home-tab1"
@@ -446,9 +446,9 @@ const BuyFeatured = () => {
                   Bhopal It completed 30+ project including flats
                 </p>
                 <nav>
-                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <div className="nav nav-tabs" id="nav-tab" role="tablist">
                     <button
-                      class="nav-link active"
+                      className="nav-link active"
                       id="nav-home-tab2"
                       data-bs-toggle="tab"
                       data-bs-target="#nav-home2"
@@ -460,7 +460,7 @@ const BuyFeatured = () => {
                       Sage Milestone
                     </button>
                     <button
-                      class="nav-link"
+                      className="nav-link"
                       id="nav-profile-tab2"
                       data-bs-toggle="tab"
                       data-bs-target="#nav-profile2"
@@ -473,9 +473,9 @@ const BuyFeatured = () => {
                     </button>
                   </div>
                 </nav>
-                <div class="tab-content" id="nav-tabContent">
+                <div className="tab-content" id="nav-tabContent">
                   <div
-                    class="tab-pane fade show active"
+                    className="tab-pane fade show active"
                     id="nav-home2"
                     role="tabpanel"
                     aria-labelledby="nav-home-tab2"
@@ -753,7 +753,7 @@ const BuyFeatured = () => {
                   </div>
 
                   <div
-                    class="tab-pane fade"
+                    className="tab-pane fade"
                     id="nav-profile3"
                     role="tabpanel"
                     aria-labelledby="nav-profile-tab3"

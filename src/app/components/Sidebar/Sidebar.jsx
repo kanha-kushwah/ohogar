@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const Sidebar = () => {
+const Sidebar = ({ handleShow }) => {
   return (
     <section id="sldierbar">
       <div className="container">
@@ -26,7 +26,7 @@ const Sidebar = () => {
           </div>
           <div className="col-md-4">
             {" "}
-            <button>Login</button>{" "}
+            <button onClick={handleShow}>Login</button>{" "}
           </div>
 
           <div className="col-12 mt-md-4 sidebar-box">
@@ -254,11 +254,11 @@ const Sidebar = () => {
                 My Transactions
               </p>
 
-              <div class="accordion" id="accordionPanelsStayOpenExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
+              <div className="accordion" id="accordionPanelsStayOpenExample">
+                <div className="accordion-item">
+                  <h2 className="accordion-header">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#panelsStayOpen-four"
@@ -277,9 +277,9 @@ const Sidebar = () => {
                   </h2>
                   <div
                     id="panelsStayOpen-four"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                       <strong>This is the first items accordion body.</strong>{" "}
                       It is shown by default, until the collapse plugin adds the
                       appropriate classes that we use to style each element.

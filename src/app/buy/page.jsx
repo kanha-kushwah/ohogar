@@ -2,12 +2,12 @@
 
 import React from 'react'
 import Link from 'next/link'
-import BuySlide from '../components/BuySlide/BuySlide'
+import BuySlide from '../components/LandingPage/BuySlide'
 import Header from '../components/Header/Header'
-import BuyFeatured from '../components/BuyFeatured/BuyFeatured'
-import BuyProperties from '../components/BuyProperties/BuyProperties'
-import BuyCollection from '../components/BuyCollection/BuyCollection'
-import BuyFive from '../components/BuyFive/BuyFive'
+import BuyFeatured from '../components/LandingPage/BuyFeatured'
+import BuyProperties from '../components/LandingPage/BuyProperties'
+import BuyCollection from '../components/LandingPage/BuyCollection'
+import BuyFive from '../components/LandingPage/BuyFive'
 import Footer from '../components/Footer/Footer'
 import Dailloge from '../components/Dailoge/Dailloge'
 

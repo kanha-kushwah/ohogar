@@ -2,8 +2,8 @@
 import React,{useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Sidebar from "../Sidebar/Sidebar";
 import styles from './Sidebar.module.css';
+import ParentModal from "../Dailoge/ParentModal";
 
 
 
@@ -25,7 +25,7 @@ console.log(isOpen)
     <>
 <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
         {/* <button onClick={closebar}>Close Sidebar</button> */}
-   <Sidebar/>
+   <ParentModal/>
       </div>
       <div className={`${styles.backdrop} ${isOpen ? styles.open : ''}`} onClick={closebar}></div>
 
@@ -44,7 +44,7 @@ console.log(isOpen)
               <div className="d-flex justify-content-end heder-gap align-items-center">
                 <div className="col-select">
                  <div className="map smart-phone d-flex align-items-center"> <Image src="/img/map.svg" height={20} width={20} alt="icon" />
-                 <select class="form-select" aria-label="Default select example">
+                 <select className="form-select" aria-label="Default select example">
                     <option selected>Ahmedabad, Gujarat</option>
                     <option value="1">Indore, Madhya Pardesh</option>
                   </select>
@@ -55,8 +55,9 @@ console.log(isOpen)
                   <button className="smart-phone"><span className="new">New</span>  <Image src="/img/smarthone-icon.svg" height={20} width={20} alt="icon" /> Download App</button>
                 </div>
                 <div className="col-select">
-            
+                <Link href="/list-property">
                   <button className="smart-phone"><span className="free">Free</span> + Post Property</button>
+                  </Link>
                 </div>
                 <div className="col-select">
                <div className="d-flex smart-phone bo-ra-full align-items-center justify-content-center">

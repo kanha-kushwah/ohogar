@@ -3,7 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 
 import Header from '../components/Header/Header'
-import BuySlide from '../components/BuySlide/BuySlide'
+import BuySlide from '../components/LandingPage/BuySlide'
 const page = () => {
   return (
 <>
@@ -26,7 +26,7 @@ const page = () => {
                     </ul>
                  </div>
                  <div className="serch-box d-flex">
-                                <select class="form-select border-0" aria-label="Default select example">
+                                <select className="form-select border-0" aria-label="Default select example">
                                     <option selected>Select City</option>
                                     <option value="1">Indore</option>
                                     <option value="2">Bhopal</option>

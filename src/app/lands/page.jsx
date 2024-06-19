@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 
 import Header from '../components/Header/Header'
-import BuySlide from '../components/BuySlide/BuySlide'
+import BuySlide from '../components/LandingPage/BuySlide'
 const page = () => {
   return (
 <>
