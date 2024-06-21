@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 
 
-import Header from '../components/Header/Header'
-import BuySlide from '../components/LandingPage/BuySlide'
+import Header from '../../app/components/Header/Header'
+import BuySlide from '../../app/components/LandingPage/BuySlide'
 const page = () => {
   return (
 <>
