@@ -24,9 +24,9 @@ const Sidebar = ({ handleShow }) => {
               </div>
             </div>{" "}
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 text-end">
             {" "}
-            <button onClick={handleShow}>Login</button>{" "}
+            <button className="login" onClick={handleShow}>Login</button>{" "}
           </div>
 
           <div className="col-12 mt-md-4 sidebar-box">

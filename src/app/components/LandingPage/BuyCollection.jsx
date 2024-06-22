@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -7,8 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useSelector } from "react-redux";
 
 const BuyCollection = () => {
+
+
   return (
     <>
       <section className="buy-slider" id="collection"> 

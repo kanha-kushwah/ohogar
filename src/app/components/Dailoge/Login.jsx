@@ -1,51 +1,78 @@
-import Image from "next/image";
-import React ,{useState} from "react";
+"use client";
+import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import PhoneInput from "react-phone-input-2";
+import Image from "next/image";
+import "react-phone-input-2/lib/style.css";
+import BASE_URL from "@/config/config";
 
-const Login = ({ show, handleClose }) => {
+const Login = ({ show, handleClose, handleShowOtp }) => {
+  const [phone, setPhone] = useState("");
+  console.log(BASE_URL);
+  const handlePhoneChange = (value) => setPhone(value);
 
-    const [phone, setPhone] = useState("");
+  const handleGetOtp = async (e) => {
+    e.preventDefault();
+    handleClose();
+    handleShowOtp();
 
-    const handlePhoneChange = (value) => {
-      setPhone(value);
+    const payload = {
+      phone: phone,
+      firebase_id: "firebase_id",
+      device_type: "device_type",
+      device_token: "device_token",
     };
+    const config = {
+      headers: {
+        accept: "application/json",
+      },
+    };
+    try {
+      const response = await BASE_URL.post("/api/register", payload, config);
+      console.log("Response:", response.data);
+    } catch (error) {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  };
 
   return (
     <Modal id="moadal" show={show} onHide={handleClose} centered>
+      <Button className="btn-close" onClick={handleClose}></Button>
       <Modal.Body>
-        <div className="d-flex flex-column justify-content-center align-items-center">
+        <div className="login d-flex flex-column justify-content-center align-items-center">
           <Image
             src="/img/login/login.png"
             alt="login"
-            width={"200"}
-            height={"200"}
+            width="249"
+            height="249"
           />
           <h2>Login</h2>
-          <p>Please confirm your country code and enter your phone number.</p>
-
-          <Form className="w-100">
-            <div className="align-items-center g-20">
-              <Form.Group
-                className="mb-3 w-100"
-                controlId="exampleForm.ControlInput1"
-              >
-                <PhoneInput
-                  country={"in"}
-                  value={phone}
-                  onChange={handlePhoneChange}
-                  inputStyle={{ width: "100%" }}
-                />
-              </Form.Group>
-    
-            </div>
-
-            <Button className="w-100" variant="primary" type="submit">
-            Get OTP
+          <p className="mt-2">
+            Please confirm your country code and enter your phone number.
+          </p>
+          <Form className="w-100" onSubmit={handleGetOtp}>
+            <Form.Group className="mb-3 mt-3 w-100">
+              <PhoneInput
+                country="in"
+                value={phone}
+                onChange={handlePhoneChange}
+                inputStyle={{ width: "100%" }}
+              />
+            </Form.Group>
+            <Button
+              className="start-btn mt-2 w-100"
+              variant="primary"
+              type="submit"
+            >
+              Get OTP
             </Button>
-
-            <p className="text-center mt-md-4">By login, you are accepting the terms & condition</p>
+            <p className="text-center mt-md-4 p-small">
+              By login, you are accepting the terms & conditions
+            </p>
           </Form>
         </div>
       </Modal.Body>

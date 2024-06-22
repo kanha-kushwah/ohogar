@@ -1,0 +1,91 @@
+.login h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 43.71px;
+    color: #313265;
+}
+.login p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #6B6B7D;
+    
+}
+.login input.form-control {
+    height: 50px !important;
+    border-radius: 15px !important;
+    border: none !important;
+}
+.login .flag-dropdown {
+    border: 0 !important;
+    background: #fff !important;
+    border-radius: 15px 0px 0px 15px !important;
+}
+.p-small{
+font-size: 12px !important;
+font-weight: 400;
+line-height: 15px;
+color: #6B6B7D;
+}
+.otp-box input {
+    width: 92px !important;
+    height: 56px !important;
+    border: none;
+    border-radius: 12px;
+}
+.otp-box span {
+    display: none;
+}
+.otp-box div{
+    justify-content: space-between !important;
+}Form{
+    z-index: 99;
+}
+
+.icon-remove .modal-content:after {
+    display: none;
+}
+.icon-remove .modal-content:before {
+    display: none;
+}
+.box-im-style img {
+    background: #fff;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 60%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.radio-custom .form-check label {
+    background: #fff;
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    width: 100%;
+cursor: pointer;
+}
+.radio-custom .form-check input{
+    font-size: 0 !important;
+}
+.radio-custom .active label {
+    background: #9899f1a6;
+}
+.radio-custom .active input {
+   display: none;
+}
+.radio-custom .active span {
+    color: #fff !important;
+}
+.radio-custom .form-check {
+    padding: 0 !important;      
+}
+.radio-custom .form-check span{
+padding-left: 20px;
+font-size: 18px;
+font-weight: 600;
+line-height: 23.4px;
+letter-spacing: -0.01em;
+text-align: left;
+color: #313265;
+}
