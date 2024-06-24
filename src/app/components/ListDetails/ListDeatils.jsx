@@ -68,7 +68,7 @@ const ListDetails = () => {
               <div className="type">
                 <p>Property Type</p>
                 <Form
-                  className="radio-custom mt-md-4 mt-3"
+                  className="radio-customs mt-md-4 mt-3"
                   onSubmit={handleSubmit}
                 >
                   <Form.Group className="d-flex">

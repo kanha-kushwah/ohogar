@@ -64,7 +64,7 @@ const ListDetails = () => {
               <div className="type">
                 
                 <Form
-                  className="radio-custom mt-md-4 mt-3"
+                  className="radio-customs mt-md-4 mt-3"
                   onSubmit={handleSubmit}
                 >
        
