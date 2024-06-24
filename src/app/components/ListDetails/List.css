@@ -1,0 +1,67 @@
+#form-details .custom-h {
+  background: #fff;
+  min-height: 600px;
+  margin-top: -125px;
+  border-radius: 12px;
+  margin-bottom: 50px;
+  padding: 18px;
+}
+.bg-detils {
+  border: solid 1px #e2e2e2;
+  border-radius: 10px;
+  background: #f2f3f8;
+  padding: 15px;
+  height: 700px;
+}
+#form-details label.form-check-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 110px;
+  background: #fff;
+  height: 88px;
+  border: 0.5px solid #9898a4;
+  border-radius: 13px;
+  font-size: 12px;
+}
+.box-inner-project {
+  flex-direction: column;
+  background: #fff;
+  padding: 13px;
+  width: 124px;
+  color: #9898a4;
+  border-radius: 12px;
+  border: 0.5px solid #9898a4;
+  cursor: pointer;
+}
+.project {
+  display: flex ;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.project img {
+    background: #fff;
+    border-radius: 12px;
+    border: 0.5px solid #9898a4;
+}
+.btn-project{
+    position: absolute;
+    top: -10px ; 
+    right: -10px ;
+    background: #fff ;
+    color: #000;
+    border: none;
+    border-radius: 50% ;
+    width: 20px ;
+    height: 20px ;
+    text-align: center ;
+    cursor: pointer ;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    justify-content: center;
+}

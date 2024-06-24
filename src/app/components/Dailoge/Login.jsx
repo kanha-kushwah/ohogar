@@ -1,21 +1,40 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import PhoneInput from "react-phone-input-2";
 import Image from "next/image";
 import "react-phone-input-2/lib/style.css";
 import BASE_URL from "@/config/config";
+import { addUser } from "@/redux/session";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const Login = ({ show, handleClose, handleShowOtp }) => {
   const [phone, setPhone] = useState("");
-  console.log(BASE_URL);
+  const dispatch = useDispatch();
+
+  const user = useSelector((state) => {
+    const users = state.adduser.users;
+    return users.length > 0 ? users[users.length - 1].user.data : null;
+  });
+
+  useEffect(() => {
+    if (user?.phone) {
+      setPhone(user?.phone);
+    }
+  }, []);
+  
   const handlePhoneChange = (value) => setPhone(value);
+
+  useEffect(() => {
+    if (user && user.token) {
+      toast.info("You are already logged in.");
+    }
+  }, [user]);
 
   const handleGetOtp = async (e) => {
     e.preventDefault();
-    handleClose();
-    handleShowOtp();
 
     const payload = {
       phone: phone,
@@ -23,19 +42,33 @@ const Login = ({ show, handleClose, handleShowOtp }) => {
       device_type: "device_type",
       device_token: "device_token",
     };
+
     const config = {
       headers: {
         accept: "application/json",
       },
     };
+
     try {
       const response = await BASE_URL.post("/api/register", payload, config);
       console.log("Response:", response.data);
+
+      if (response.data.success) {
+
+        // localStorage.setItem('token', token);
+        toast.success(response.data.message);
+        dispatch(addUser(response.data));
+        handleClose();
+        handleShowOtp();
+      } else {
+        toast.error(response.data.message);
+      }
     } catch (error) {
       console.error(
         "Error:",
         error.response ? error.response.data : error.message
       );
+      toast.error(error.response ? error.response.data.message : error.message);
     }
   };
 

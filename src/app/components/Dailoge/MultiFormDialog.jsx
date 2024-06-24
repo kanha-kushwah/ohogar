@@ -5,8 +5,9 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
+import Step5 from './Step5';
 
-const TOTAL_STEPS = 4;
+const TOTAL_STEPS = 5;
 
 const MultiFormDialog = ({ show, handleClose }) => {
     const [step, setStep] = useState(1);
@@ -39,7 +40,10 @@ const MultiFormDialog = ({ show, handleClose }) => {
       {step === 1 && <Step1 onNext={handleNext} />}
       {step === 2 && <Step2 onNext={handleNext} onPrev={handlePrev} />}
       {step === 3 && <Step3 onNext={handleNext} onPrev={handlePrev} />}
-      {step === 4 && <Step4 onPrev={handlePrev} onSubmit={handleSubmit} />}
+      {step === 4 && <Step4 onSubmit={handleNext} onPrev={handlePrev} />}
+      {step === 5 && <Step5 formData={formData} onPrev={handlePrev} onSubmit={handleSubmit} />}
+
+
 
         </div>
       </Modal.Body>

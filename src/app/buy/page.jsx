@@ -11,11 +11,16 @@ import BuyFive from "../components/LandingPage/BuyFive";
 import Footer from "../components/Footer/Footer";
 import Dailloge from "../components/Dailoge/Dailloge";
 import AddUser from "../components/AddUser";
+import Step5 from "../components/Dailoge/Step5";
 
 const page = () => {
   return (
     <>
       <Header />
+
+
+
+
 
       <section>
         <div className="container ">
@@ -72,6 +77,7 @@ const page = () => {
           </div>
         </div>
       </section>
+
 
       <Dailloge />
       <BuySlide />

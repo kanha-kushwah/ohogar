@@ -194,10 +194,11 @@ const ListProperty = () => {
                         </Form.Group>
                       </div>
 
-
+        <Link href={"/list-property/propertydeatails"}>
                       <Button className="w-100" type="submit">
                         Next, add address & Price
                       </Button>
+                      </Link>
                     </Form>
 
                   </Tab>

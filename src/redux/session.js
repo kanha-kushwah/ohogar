@@ -1,7 +1,8 @@
+// slice.js
 const { createSlice, nanoid } = require("@reduxjs/toolkit");
 
 const initialState = {
-  users:[],
+  users: [],
 };
 
 const Slice = createSlice({
@@ -12,12 +13,10 @@ const Slice = createSlice({
       console.log(action);
       const data = {
         id: nanoid(),
-        name: action.payload,
+        user: action.payload,
       };
       state.users.push(data);
     },
-
-    
   },
 });
 

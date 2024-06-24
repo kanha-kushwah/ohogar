@@ -19,9 +19,11 @@ const Step2 = ({ onNext, onPrev }) => {
   };
 
   return (
-    <div className='w-100'>
-      <h2>Select an Interest:</h2>
-      <Form className='radio-custom' onSubmit={handleSubmit(onSubmit)}>
+    <div className='w-100 login'>
+      <h2 className='mb-0'>Select an Interest</h2>
+      <p className='p-small'>Selecting an interest will give you the recommendations. </p>
+ 
+      <Form className='radio-custom mt-md-4 mt-3' onSubmit={handleSubmit(onSubmit)}>
         <Form.Group>
           <Form.Check
             type='radio'
@@ -95,10 +97,11 @@ const Step2 = ({ onNext, onPrev }) => {
           {errors['SelectInterest'] && <Form.Text className='text-danger'>Selection is required</Form.Text>}
         </Form.Group>
         {/* <Button variant='secondary' onClick={onPrev}>Previous</Button>{' '} */}
-        <Button className='start-btn w-100 btn btn-primary' variant="primary" type="submit" style={{ marginTop: '40px' }}>
+        <Button className='start-btn w-100 btn btn-primary' variant="primary" type="submit" style={{ marginTop: '20px' }}>
           Next
         </Button>
       </Form>
+      
     </div>
   );
 };

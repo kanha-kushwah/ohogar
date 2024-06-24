@@ -34,7 +34,13 @@ section#header {
     background-size: cover;
     border-radius: 0 0 80px 80px
 }
-
+#list-page-single{
+    background-image: url(/img/list/details.png);
+    min-height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 0 80px 80px
+}
 .banner-buy {
     height: 644px;
     background-position: center center;

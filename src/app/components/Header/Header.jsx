@@ -19,8 +19,7 @@ const Header = () => {
     const closebar = () => {
       setIsOpen(false);
     }
-  
-console.log(isOpen)
+
   return (
     <>
 <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>

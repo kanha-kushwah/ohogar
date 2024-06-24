@@ -1,19 +1,11 @@
-'use client'
+// store.js
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import addreducer from "./slice"
-
-// import authReducer from "./adminSlice/authSlice";
-// import authDealSlice from './dealerSlice/authSlice';
-// import cartReducer from './cartSlice'; 
+import addReducer from './session'; // Ensure correct import
 
 const rootReducer = combineReducers({
-//   auth: authReducer,
-//   dealer: authDealSlice,
-//   cart: cartReducer,
-adduser:addreducer,
-
+  adduser: addReducer, // Ensure correct property name and import
 });
 
 const persistConfig = {
@@ -24,7 +16,11 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false, // Disable serializable check for non-serializable values like functions
+    }),
 });
 
 export const persistor = persistStore(store);

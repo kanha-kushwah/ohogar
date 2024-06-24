@@ -1,19 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button, Alert } from 'react-bootstrap';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import Image from 'next/image';
+import { useSelector } from 'react-redux';
+import BASE_URL from '@/config/config';
+import { toast } from "react-toastify";
+
 
 const Step1 = ({ onNext }) => {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm();
   const [phone, setPhone] = useState('');
   const [imagePreview, setImagePreview] = useState(null);
 
+  const user = useSelector((state) => {
+    const users = state.adduser.users;
+    return users.length > 0 ? users[users.length - 1].user.data : null;
+   
+  });
+
   const handlePhoneChange = (value) => {
     setPhone(value);
     setValue('phone', value, { shouldValidate: true });
   };
+
+  useEffect(() => {
+    if (user?.phone) {
+      setPhone(user?.phone);
+      setValue('phone', user?.phone, { shouldValidate: true });
+    }
+  }, [user, setValue]);
+
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -34,9 +52,47 @@ setValue('image', file)
     document.getElementById('formImage').click();
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log('Form Data:', data);  
-    onNext(data);
+    
+    const payload = {
+      name:data.name,
+      email:data.email,
+      phone: phone,
+      firebase_id: "firebase_id",
+      device_type: "device_type",
+      device_token: "device_token",
+    };
+
+    const config = {
+      headers: {
+        accept: "application/json",
+      },
+    };
+
+    try {
+      const response = await BASE_URL.post("/api/register", payload, config);
+      console.log("Response:", response.data);
+
+      if (response.data.success) {
+        // const token = response.data.data.token;
+        // localStorage.setItem('token', token);
+        toast.success(response.data.message);
+        // dispatch(addUser(response.data));
+      
+        onNext(data);
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+      toast.error(error.response ? error.response.data.message : error.message);
+    }
+
+    
   };
 
  
@@ -49,7 +105,7 @@ setValue('image', file)
   };
 
   return (
-    <div className='w-100'>
+    <div className='w-100 step-input'>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className='text-center box-im-style mb-4' controlId="formImage">
           <Form.Control 
@@ -86,7 +142,7 @@ setValue('image', file)
           {errors.email && <Alert variant="danger">{errors.email.message}</Alert>}
         </Form.Group>
 
-        <Form.Group controlId="formPhone">
+        <Form.Group className='login' controlId="formPhone">
           <PhoneInput placeholder='Enter your Phone'
             country={'in'}
             value={phone}

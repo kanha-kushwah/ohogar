@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import ImportBsJS from "./importBsJS";
 import { Providers } from "@/redux/provider";
 import "react-phone-input-2/lib/style.css";

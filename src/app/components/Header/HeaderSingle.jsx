@@ -20,7 +20,6 @@ const HeaderSingle = () => {
       setIsOpen(false);
     }
   
-console.log(isOpen)
   return (
     <>
 <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
@@ -72,8 +71,8 @@ console.log(isOpen)
                 </div>
                 <div className="col-select">
                <div className="d-flex smart-phone bo-ra-full align-items-center justify-content-center">
-                <Image onClick={opensidebar} className="pointer me-2" src="img/menu.svg" alt="menu" height={28} width={28}  />
-                <Image className="pointer" src="img/user.svg" alt="user" height={28} width={28} />
+                <Image onClick={opensidebar} className="pointer me-2" src="/img/menu.svg" alt="menu" height={28} width={28}  />
+                <Image className="pointer" src="/img/user.svg" alt="user" height={28} width={28} />
 
                </div>
                 </div>
