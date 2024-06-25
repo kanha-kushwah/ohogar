@@ -11,7 +11,8 @@
   border-radius: 10px;
   background: #f2f3f8;
   padding: 15px;
-  height: 700px;
+  height: 710px;
+  overflow: auto;
 }
 #form-details label.form-check-label {
   display: flex;

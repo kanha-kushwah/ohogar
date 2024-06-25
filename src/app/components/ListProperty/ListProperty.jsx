@@ -89,6 +89,7 @@ const ListProperty = () => {
               </ul>
 
               <Image
+              className="fix-img-view"
                 src="/img/list/List-addon.png"
                 alt="Logo"
                 width={422}
@@ -165,7 +166,7 @@ const ListProperty = () => {
                         />
                       </div>
 
-                      <div className="d-flex g-20">
+                      <div className="d-flex b-c-block g-20">
                         <Form.Group
                           className="mb-3 w-100"
                           controlId="exampleForm.ControlInput1"
@@ -187,7 +188,7 @@ const ListProperty = () => {
                       <div className="d-flex g-20">
                         
                         <Form.Group
-                          className="mb-3 w-50 pe-2"
+                          className="mb-3 w-md-50 w-100 pe-md-2 pe-0"
                           controlId="exampleForm.ControlInput1"
                         >
                           <Form.Control type="search" placeholder="Search" />
@@ -227,7 +228,7 @@ const ListProperty = () => {
         <h2 className="heading-xl-small">How it works</h2>
       </div>
       <div className="d-block d-md-flex g-20 mt-md-4 mt-4">
-      <div className="col-md-4 col-12">
+      <div className="col-md-4 col-12 mb-3 mb-md-0">
         <div className="ls-box d-flex">
           <Image src="/img/list/step1.png" alt="step1" width={"80"} height={"80"} />   
           <div>
@@ -236,7 +237,7 @@ const ListProperty = () => {
           </div>
            </div>
       </div>
-      <div className="col-md-4 col-12">  <div className="ls-box d-flex">
+      <div className="col-md-4 col-12 mb-3 mb-md-0">  <div className="ls-box d-flex">
           <Image src="/img/list/step2.png" alt="step1" width={"80"} height={"80"} />   
           <div>
           <h3>Property reaches to 10 lacs+ tenants & buyers</h3>
@@ -264,7 +265,7 @@ const ListProperty = () => {
   <div className="container">
     <div className="row">
     <h2 className="heading-xl-small">Frequently asked questions</h2>
-      <div className="col-md-12 col-12 mt-md-4 mt-4">
+      <div className="col-md-12 col-12 mt-md-4 mt-2">
 
       <Accordion defaultActiveKey="0" flush>
       <Accordion.Item eventKey="0">

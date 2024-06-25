@@ -5,12 +5,12 @@ import Image from 'next/image';
 const Dailloge = () => {
     const [show, setShow] = useState(false);
   
-    useEffect(() => {
-        if (!localStorage.getItem('modalShown')) {
-          setShow(true);
-          localStorage.setItem('modalShown', 'true');
-        }
-      }, []);
+    // useEffect(() => {
+    //     if (!localStorage.getItem('modalShown')) {
+    //       setShow(true);
+    //       localStorage.setItem('modalShown', 'true');
+    //     }
+    //   }, []);
       const handleClose = () => setShow(false);
   return (
     <section >

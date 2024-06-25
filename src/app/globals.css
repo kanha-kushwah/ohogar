@@ -757,7 +757,8 @@ button.start-btn {
 #post-accordian button {
     font-size: 24px;
     font-weight: 500;
-    line-height: 32.78px
+    line-height: 32.78px;
+    padding: 15px 0px;
 }
 
 .form-style input.form-control {
@@ -910,6 +911,10 @@ button.accordion-button {
         margin: auto;
         padding: 0 20px
     }
+    img.fix-img-view {
+        width: 100% !important;
+        object-fit: contain !important;
+    }
 }
 
 @media (max-width:767px) {
@@ -965,5 +970,39 @@ button.accordion-button {
 
     .swiper {
         margin-top: 20px
+    }
+    h2.heading-xl-small {
+        font-size: 30px;
+        line-height: 38px;
+    }
+    #post-accordian button {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 15px 0px;
+    }
+    #list-page {
+        border-radius: 0 0 20px 20px;
+        background-position: center center;
+        padding-bottom: 20px;
+    }
+    
+}
+@media(max-width:510px){
+   #list-page .form-check {
+        width: 100%;
+    }
+    #list-page .check-off label.form-check-label {
+        width: 100%;
+    }
+    .b-c-block {
+        flex-direction: column !important;
+        gap: 0;
+    }
+    .container {
+        max-width: 96% !important;
+    }
+    #list-page .accordion-body {
+        padding: 0;
+        padding-bottom: 10px;
     }
 }
