@@ -38,7 +38,7 @@ const ListDetails = () => {
     };
     console.log(formData);
   };
-
+  const now = 66.33;
   return (
     <div>
       <section id="list-page-single">
@@ -50,18 +50,45 @@ const ListDetails = () => {
       <section id="form-details">
         <div className="container">
           <div className="custom-h d-flex g-20">
-            <div className="col-3 bg-detils">
-            <Link href="/list-property/propertydeatails">
-            <p>Go Back</p></Link>
-              <h4>Post your property</h4> 
-              <p className="p-samll">Sell or rent your property</p>
-              <ProgressBar now={60} />
+          <div className="col-3 bg-detils">
+              <Link href="/list-property/propertydeatails">
+                <p className="list-button">
+                  <i class="bi bi-chevron-left"></i> Go Back
+                </p>
+              </Link>
+              <h4 className="list-bar-heading">Post your property </h4>
+              <p className="p-samll list-pergraph">
+                Sell or rent your property
+              </p>
+
+              <div className="d-flex align-items-center g-20 percent-fix">
+                <ProgressBar variant="danger" className="w-100" now={now} />{" "}
+                <span className="perc">{now}%</span>
+              </div>
+
+              <div className="status mt-md-4 mt-4">
+                <ul>
+                  
+                  <div className="p-relative">
+                    {/* <span className="compeleted">0</span> */}
+                    <h3>Property Details</h3> <button>Completed</button>
+                  </div>
+
+                  <div className="p-relative pt-md-4 pt-4">
+                     <h3  className="active">Price Details</h3>
+                    <button>Completed</button>
+                  </div>
+
+                </ul>
+              </div>
             </div>
 
-            <div className="col bg-detils">
-              <h2>Add Price Details</h2>
 
-              <div className="type">
+
+            <div className="col bg-detils right-side">
+              <h2 className="list-bar-heading">Add Price Details</h2>
+
+              <div className="type mt-md-5 mt-5">
                 
                 <Form
                   className="radio-customs mt-md-4 mt-3"
@@ -70,45 +97,27 @@ const ListDetails = () => {
        
 
                   <Form.Group controlId="monthlyrent">
-                    <Form.Label>Monthly Rent </Form.Label>
+                    {/* <Form.Label>Monthly Rent </Form.Label> */}
                     <Form.Control
+                      className="mt-md-4 mt-4 form-inputs"
                       type="text"
                       placeholder="Monthly Rent"
                     />
                   </Form.Group>
 
                   <Form.Group controlId="date">
-                    <Form.Label>Available Form</Form.Label>
+                    {/* <Form.Label>Available Form</Form.Label> */}
                     <Form.Control
+                    className="mt-md-4 mt-4 form-inputs"
                       type="date"
                       placeholder="Enter locality"
                     />
                   </Form.Group>
 
-                  <Form.Group controlId="furnishedType">
-                    <Form.Label>Furnished Type</Form.Label>
+                  <Form.Group controlId="furnishedType" className="mt-md-5 mt-5">
+                    <Form.Label className="list-pergraph">Security Deposit</Form.Label>
 
-                    <div className="d-flex">
-                      <Form.Check
-                        type="radio"
-                        id="fullyfurnished"
-                        label={<span>Fully Furnished</span>}
-                        value="fullyfurnished"
-                        {...register("furnishedType", { required: true })}
-                        onChange={handleFurnishedChange}
-                        checked={furnishedType === "fullyfurnished"}
-                        className={furnishedType === "fullyfurnished" ? "active" : ""}
-                      />
-                      <Form.Check
-                        type="radio"
-                        id="semifurnished"
-                        label={<span>Semi Furnished</span>}
-                        value="semifurnished"
-                        {...register("furnishedType", { required: true })}
-                        onChange={handleFurnishedChange}
-                        checked={furnishedType === "semifurnished"}
-                        className={furnishedType === "semifurnished" ? "active" : ""}
-                      />
+                    <div className="style-radio-2 d-flex g-20">
                       <Form.Check
                         type="radio"
                         id="none"
@@ -118,6 +127,26 @@ const ListDetails = () => {
                         onChange={handleFurnishedChange}
                         checked={furnishedType === "none"}
                         className={furnishedType === "none" ? "active" : ""}
+                      />
+                      <Form.Check
+                        type="radio"
+                        id="onemonth"
+                        label={<span>1 Month</span>}
+                        value="onemonth"
+                        {...register("furnishedType", { required: true })}
+                        onChange={handleFurnishedChange}
+                        checked={furnishedType === "onemonth"}
+                        className={furnishedType === "onemonth" ? "active" : ""}
+                      />
+                      <Form.Check
+                        type="radio"
+                        id="twomonth"
+                        label={<span>2 Month</span>}
+                        value="twomonth"
+                        {...register("furnishedType", { required: true })}
+                        onChange={handleFurnishedChange}
+                        checked={furnishedType === "twomonth"}
+                        className={furnishedType === "twomonth" ? "active" : ""}
                       />
                     </div>
                   </Form.Group>
@@ -130,7 +159,7 @@ const ListDetails = () => {
                     type="submit"
                     style={{ marginTop: "150px" }}
                   >
-                    Next, add price details
+                   Post Property
                   </Button>
                   </Link>
                 </Form>

@@ -27,11 +27,11 @@ const Login = ({ show, handleClose, handleShowOtp }) => {
   
   const handlePhoneChange = (value) => setPhone(value);
 
-  useEffect(() => {
-    if (user && user.token) {
-      toast.info("You are already logged in.");
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (user && user.token) {
+  //     toast.info("You are already logged in.");
+  //   }
+  // }, [user]);
 
   const handleGetOtp = async (e) => {
     e.preventDefault();

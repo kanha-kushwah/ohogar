@@ -8,7 +8,6 @@ import "./List.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-
 const ListDetails = () => {
   const [selectedOption, setSelectedOption] = useState();
   const [furnishedType, setFurnishedType] = useState("none");
@@ -40,9 +39,9 @@ const ListDetails = () => {
       shareListing,
     };
     console.log(formData);
-    router.push('/list-property/pricedetails'); 
+    router.push("/list-property/pricedetails");
   };
-
+  const now = 33.3;
   return (
     <div>
       <section id="list-page-single">
@@ -52,26 +51,48 @@ const ListDetails = () => {
       </section>
 
       <section id="form-details">
-        <div className="container">
+        <div className="container add-property-design">
           <div className="custom-h d-flex g-20">
             <div className="col-3 bg-detils">
               <Link href="/list-property">
-              <p>Go Back</p></Link>
-              <h4>Post your property</h4>
-              <p className="p-samll">Sell or rent your property</p>
-              <ProgressBar now={60} />
+                <p className="list-button">
+                  <i class="bi bi-chevron-left"></i> Go Back
+                </p>
+              </Link>
+              <h4 className="list-bar-heading">Post your property </h4>
+              <p className="p-samll list-pergraph">
+                Sell or rent your property
+              </p>
+
+              <div className="d-flex align-items-center g-20 percent-fix">
+                <ProgressBar variant="danger" className="w-100" now={now} />{" "}
+                <span className="perc">{now}%</span>
+              </div>
+
+              <div className="status mt-md-4 mt-4">
+                <ul>
+                  <div className="p-relative">
+                    <h3 className="active">Property Details</h3> 
+                    <button>Completed</button>
+                  </div>
+                  <div className="p-relative pt-md-4 pt-4">
+                   <h3>Price Details</h3>
+                    <button>In-Progress</button>
+                  </div>
+                </ul>
+              </div>
             </div>
 
-            <div className="col bg-detils">
-              <h2>Add Property Details</h2>
+            <div className="col bg-detils right-side">
+              <h2 className="list-bar-heading">Add Property Details</h2>
 
-              <div className="type">
-                <p>Property Type</p>
+              <div className="type mt-md-5 mt-5">
+                <p className="list-pergraph">Property Type</p>
                 <Form
-                  className="radio-customs mt-md-4 mt-3"
+                  className="radio-customs  mt-md-2 mt-2"
                   onSubmit={handleSubmit}
                 >
-                  <Form.Group className="d-flex">
+                  <Form.Group className="style-radio d-flex g-20">
                     <Form.Check
                       type="radio"
                       id="apartment"
@@ -158,9 +179,9 @@ const ListDetails = () => {
                     />
                   </Form.Group>
 
-                  <Form.Group controlId="landmarkArea">
-                    <Form.Label>Landmark Area/ Nearby</Form.Label>
+                  <Form.Group className="mt-md-4 mt-4" controlId="landmarkArea">
                     <Form.Control
+                      className="form-inputs"
                       type="text"
                       placeholder="Enter landmark area or nearby"
                       value={landmarkArea}
@@ -168,9 +189,9 @@ const ListDetails = () => {
                     />
                   </Form.Group>
 
-                  <Form.Group controlId="locality">
-                    <Form.Label>Locality</Form.Label>
+                  <Form.Group className="mt-md-4 mt-4" controlId="locality">
                     <Form.Control
+                      className="form-inputs"
                       type="text"
                       placeholder="Enter locality"
                       value={locality}
@@ -178,10 +199,12 @@ const ListDetails = () => {
                     />
                   </Form.Group>
 
-                  <Form.Group controlId="furnishedType">
-                    <Form.Label>Furnished Type</Form.Label>
-
-                    <div className="d-flex">
+                  <Form.Group
+                    className="mt-md-4 mt-4"
+                    controlId="furnishedType"
+                  >
+                    <p className="list-pergraph">Furnished Type</p>
+                    <div className="style-radio-2 d-flex g-20">
                       <Form.Check
                         type="radio"
                         id="fullyfurnished"
@@ -190,7 +213,9 @@ const ListDetails = () => {
                         {...register("furnishedType", { required: true })}
                         onChange={handleFurnishedChange}
                         checked={furnishedType === "fullyfurnished"}
-                        className={furnishedType === "fullyfurnished" ? "active" : ""}
+                        className={
+                          furnishedType === "fullyfurnished" ? "active" : ""
+                        }
                       />
                       <Form.Check
                         type="radio"
@@ -200,7 +225,9 @@ const ListDetails = () => {
                         {...register("furnishedType", { required: true })}
                         onChange={handleFurnishedChange}
                         checked={furnishedType === "semifurnished"}
-                        className={furnishedType === "semifurnished" ? "active" : ""}
+                        className={
+                          furnishedType === "semifurnished" ? "active" : ""
+                        }
                       />
                       <Form.Check
                         type="radio"
@@ -215,8 +242,9 @@ const ListDetails = () => {
                     </div>
                   </Form.Group>
 
-                  <Form.Group controlId="shareListing">
+                  <Form.Group className="mt-md-4 mt-4" controlId="shareListing">
                     <Form.Check
+                      className="list-pergraph"
                       type="checkbox"
                       label="Share listing information with agents"
                       checked={shareListing}
@@ -224,7 +252,6 @@ const ListDetails = () => {
                     />
                   </Form.Group>
 
-              
                   <Button
                     className="start-btn w-100 btn btn-primary"
                     variant="primary"
@@ -233,7 +260,6 @@ const ListDetails = () => {
                   >
                     Next, add price details
                   </Button>
-             
                 </Form>
               </div>
             </div>

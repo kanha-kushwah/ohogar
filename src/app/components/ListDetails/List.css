@@ -14,7 +14,7 @@
   height: 710px;
   overflow: auto;
 }
-#form-details label.form-check-label {
+.style-radio label.form-check-label {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,6 +26,8 @@
   border: 0.5px solid #9898a4;
   border-radius: 13px;
   font-size: 12px;
+  padding: 10px;
+  cursor: pointer;
 }
 .box-inner-project {
   flex-direction: column;
@@ -65,4 +67,180 @@
     align-items: center;
     font-size: 10px;
     justify-content: center;
+}
+#post-accordian .accordion-body {
+  padding: 0px 0px 15px 0px !important;
+}
+
+.p-relative{
+  position: relative;
+}
+span.compeleted {
+  width: 18px;
+  height: 18px;
+  display: block;
+  border-radius: 13px;
+  font-size: 0;
+  background: #EEBD6252;
+  position: absolute;
+  left: -40px;
+  top: 28px;
+}
+
+.com-pelete{
+  width: 18px;
+  height: 18px;
+  display: block;
+  border-radius: 13px;
+  font-size: 0;
+  background: #EEBD62;
+  position: absolute;
+  left: -40px;
+  top: 6px;
+}
+
+.com-pelete:after {
+  content: "";
+  border: solid 2px #EEBD62;
+  width: 30px;
+  height: 30px;
+  padding: 14px;
+  position: absolute;
+  left: -7px;
+  top: -7px;
+  border-radius: 20px;
+}
+.status ul {
+  padding-left: 45px;
+}
+.status h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.86px;
+  text-align: left;
+  color: #372DA6;
+  margin-bottom: 5px;
+} 
+.status button {
+  background: #D9D6FF;
+  border: none;
+  color: #372DA6;
+  padding: 8px 15px;
+  border-radius: 36px;
+  width: 100px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.status h3:before {
+  content: "0";
+  position: absolute;
+  left: -30px;
+  background: #f1e2c8;
+  font-size: 0;
+  height: 18px;
+  width: 18px;
+  border-radius: 29px;
+}
+
+/* span.compeleted:before {
+  content: "";
+  border: solid 1px #EAEAEA;
+  height: 41px;
+  position: absolute;
+  left: 8px;
+  top: -50px;
+  z-index: 0;
+} */
+.list-bar-heading{
+font-size: 24px;
+font-weight: 500;
+line-height: 32.78px;
+text-align: left;
+color: #313265;
+}
+.list-button{
+font-size: 16px;
+font-weight: 500;
+line-height: 21.86px;
+text-align: left;
+color: #313265;
+}
+.list-pergraph{
+font-size: 14px;
+font-weight: 400;
+line-height: 19.12px;
+text-align: left;
+color: #9898A4;
+}
+.perc{
+font-size: 10px;
+color: #9898A4;
+}
+.progress{
+  height: 5px;
+}
+.style-radio input {
+  display: none;
+}
+.style-radio .form-check {
+  padding: 0;
+}
+.style-radio .active label.form-check-label {
+  background: #d9d6ff;
+  color: #372DA6;
+  border-color: #d9d6ff;
+}
+
+.right-side {
+  padding-right: 20%;
+}
+input.form-inputs {
+  height: 48px;
+  border: 0.5px solid #9898A4;
+}
+.style-radio-2 label {
+  width: 200px;
+  height: 48px;
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9898A4;
+  cursor: pointer;
+  border: 0.5px solid #9898A4;
+}
+.style-radio-2 input{
+  display: none;
+}
+.style-radio-2 .form-check{
+  padding: 0;
+}
+.style-radio-2 .active label {
+  background: #d9d6ff;
+  color: #372DA6;
+  border-color: #d9d6ff;
+}
+.last-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.last-flex .form-check {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 0;
+  text-align: center;
+  justify-content: center;
+}
+.last-flex .form-check-input{
+  margin: 0 !important;
+}
+.last-flex label {
+  display: inline-block;
+  font-size: 12px;
+  padding: 9px 13px;
 }

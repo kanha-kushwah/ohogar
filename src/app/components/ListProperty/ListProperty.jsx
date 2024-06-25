@@ -188,7 +188,7 @@ const ListProperty = () => {
                       <div className="d-flex g-20">
                         
                         <Form.Group
-                          className="mb-3 w-md-50 w-100 pe-md-2 pe-0"
+                          className="mb-3 w-50 pe-md-2 pe-0 m-w-100"
                           controlId="exampleForm.ControlInput1"
                         >
                           <Form.Control type="search" placeholder="Search" />

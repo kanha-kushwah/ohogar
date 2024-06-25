@@ -4,9 +4,15 @@ import Form from 'react-bootstrap/Form';
 import Image from 'next/image';
 import OtpInput from 'react-otp-input';
 import { useSelector } from 'react-redux';
+import './Dailloge.css';
+import SuceesPost from './SuceesPost';
 
-const OtpDialog = ({ show, handleClose ,handleShowMultiForm }) => {
+const Postproperty = ({ show, handleClose ,handleShowMultiForm }) => {
   const [otp, setOtp] = useState('');
+  const [showPostSuceess, setShowPostSuceess] = useState(false);
+  const showPostSucees = () => setShowPostSuceess(true);
+  const handleCloseSucees = () => setShowPostSuceess(false);
+
   const user = useSelector((state) => {
     const users = state.adduser.users;
     return users.length > 0 ? users[users.length - 1].user.data : null;
@@ -16,20 +22,20 @@ const OtpDialog = ({ show, handleClose ,handleShowMultiForm }) => {
 console.log('select',user)
   const handleOtpChange = (e) => setOtp(e.target.value);
   const handleVerifyOtp = (e) => {
-    // OTP verification logic here
     e.preventDefault();
     handleClose();
-    handleShowMultiForm();
-   
+    showPostSucees();
   };
   return (
+    <>
+    <SuceesPost show={showPostSuceess} handleClose={handleCloseSucees}  />
     <Modal id="moadal" show={show} onHide={handleClose} centered>
       <Button className="btn-close" onClick={handleClose}></Button>
       <Modal.Body>
         <div className="login d-flex flex-column justify-content-center align-items-center">
           <Image className='mb-md-5 mb-3' src="/img/login/otp.png" alt="login" width="195" height="150" />
-          <h2>Login</h2>
-          <p className="mt-2">We’ve sent an SMS with an activation code to your phone <b>{user?.phone}</b></p>
+          <h2>Enter OTP</h2>
+          <p className="mt-2">OTP has been sent to <b>{user?.phone}</b></p>
           <Form className="w-100" onSubmit={handleVerifyOtp }>
             <Form.Group className="otp-box mb-3 mt-3 w-100">
             <OtpInput
@@ -49,7 +55,8 @@ console.log('select',user)
         </div>
       </Modal.Body>
     </Modal>
+    </>
   );
 };
 
-export default OtpDialog;
+export default Postproperty;

@@ -6,6 +6,8 @@ import Image from "next/image";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "./../../components/ListDetails/List.css";
 import Link from "next/link";
+import Postproperty from "../Dailoge/Postproperty";
+import SuceesPost from "../Dailoge/SuceesPost";
 
 const ProjectDetails = () => {
   const [images, setImages] = useState([]);
@@ -13,7 +15,16 @@ const ProjectDetails = () => {
   const [tour, setTour] = useState([]);
   const [furnishedType, setFurnishedType] = useState("none");
   const [pdfs, setPdfs] = useState([]);
+  const [showPostProperty, setShowPostProperty] = useState(false);
+  const [showPostSuceess, setShowPostSuceess] = useState(false);
 
+  const handleShowProperty = () => setShowPostProperty(true);
+  const handleCloseProperty = () => setShowPostProperty(false);
+
+  const showPostSucees = () => setShowPostSuceess(true);
+  const handleCloseSucees = () => setShowPostSuceess(false);
+
+ 
   const {
     register,
     handleSubmit, // Required to handle form submission
@@ -80,10 +91,11 @@ const ProjectDetails = () => {
   };
 
   const onSubmit = (data) => {
-    console.log(data); // This will log the form data upon submission
-    // Here you can add your form submission logic
-  };
+    handleShowProperty();
+    console.log(data); 
 
+  };
+  const now = 100;
   return (
     <div>
       <section id="list-page-single">
@@ -91,25 +103,55 @@ const ProjectDetails = () => {
           <div className="row md-pt-4 pt-4"></div>
         </div>
       </section>
+      <Postproperty show={showPostProperty} handleClose={handleCloseProperty} />
 
       <section id="form-details">
         <div className="container">
           <div className="custom-h d-flex g-20">
-            <div className="col-3 bg-detils">
+          <div className="col-3 bg-detils">
               <Link href="/list-property/pricedetails">
-                <p>Go Back</p>
+                <p className="list-button">
+                  <i class="bi bi-chevron-left"></i> Go Back
+                </p>
               </Link>
-              <h4>Post your property</h4>
-              <p className="p-samll">Sell or rent your property</p>
-              <ProgressBar now={60} />
+              <h4 className="list-bar-heading">Post your property </h4>
+              <p lassName="p-samll list-pergraph" >
+                Sell or rent your property
+              </p>
+
+              <div className="d-flex align-items-center g-20 percent-fix">
+                <ProgressBar variant="danger" className="w-100" now={now} />{" "}
+                <span className="perc">{now}%</span>
+              </div>
+
+              <div className="status mt-md-4 mt-4">
+                <ul>
+                  
+                  <div className="p-relative">
+                    {/* <span className="compeleted">0</span> */}
+                    <h3>Property Details</h3> <button>Completed</button>
+                  </div>
+
+                  <div className="p-relative pt-md-4 pt-4">
+                     <h3  className="active">Price Details</h3>
+                    <button>Completed</button>
+                  </div>
+
+                  <div className="p-relative pt-md-4 pt-4">
+                     <h3  className="active">Project Details</h3>
+                    <button>In-Progress</button>
+                  </div>
+
+                </ul>
+              </div>
             </div>
 
             <div className="col bg-detils">
-              <h2>Add Price Details</h2>
+              <h2 className="list-bar-heading">Add Price Details</h2>
 
               <div className="type mt-md-4 mt-4">
                 <div>
-                  <p className="mb-0">Property Type</p>
+                  <p className="mb-0 list-pergraph">Property Type</p>
                   <div className="project">
                     {images.map((image, index) => (
                       <div key={index} style={{ position: "relative" }}>
@@ -147,9 +189,9 @@ const ProjectDetails = () => {
                     className="mt-md-4 mt-4"
                     controlId="furnishedType"
                   >
-                    <Form.Label>Near Popular Localities</Form.Label>
+                    <Form.Label className="list-pergraph">Near Popular Localities</Form.Label>
 
-                    <div className="d-flex">
+                    <div className="style-radio-2 d-flex g-20">
                       <Form.Check
                         type="radio"
                         id="School"
@@ -195,12 +237,13 @@ const ProjectDetails = () => {
                     </div>
                   </Form.Group>
 
-                  <p className="mt-md-4 mt-4">Overview</p>
+                  <p className="mt-md-4 mt-4 list-pergraph">Overview</p>
                   <Row className="mb-3">
                     <Col>
                       <Form.Group controlId="formSize">
-                        <Form.Label>Size</Form.Label>
+                        {/* <Form.Label>Size</Form.Label> */}
                         <Form.Control
+                        className="form-inputs"
                           type="text"
                           placeholder="Enter size"
                           {...register("size", { required: true })}
@@ -210,8 +253,9 @@ const ProjectDetails = () => {
                     </Col>
                     <Col>
                       <Form.Group controlId="formProjectSize">
-                        <Form.Label>Project Size</Form.Label>
+                        {/* <Form.Label>Project Size</Form.Label> */}
                         <Form.Control
+                         className="form-inputs"
                           type="text"
                           placeholder="Enter project size"
                           {...register("projectSize", { required: true })}
@@ -221,8 +265,9 @@ const ProjectDetails = () => {
                     </Col>
                     <Col>
                       <Form.Group controlId="formLaunchDate">
-                        <Form.Label>Launch Date</Form.Label>
+                        {/* <Form.Label>Launch Date</Form.Label> */}
                         <Form.Control
+                         className="form-inputs"
                           type="date"
                           {...register("launchDate", { required: true })}
                         />
@@ -231,8 +276,9 @@ const ProjectDetails = () => {
                     </Col>
                     <Col>
                       <Form.Group controlId="formAvgPrice">
-                        <Form.Label>Avg. Price</Form.Label>
+                        {/* <Form.Label>Avg. Price</Form.Label> */}
                         <Form.Control
+                         className="form-inputs"
                           type="number"
                           placeholder="Enter average price"
                           {...register("avgPrice", { required: true })}
@@ -244,8 +290,9 @@ const ProjectDetails = () => {
                   <Row className="mb-3">
                     <Col>
                       <Form.Group controlId="formPossessionStatus">
-                        <Form.Label>Possession Status</Form.Label>
+                        {/* <Form.Label>Possession Status</Form.Label> */}
                         <Form.Control
+                         className="form-inputs"
                           type="text"
                           placeholder="Enter possession status"
                           {...register("possessionStatus", { required: true })}
@@ -255,8 +302,9 @@ const ProjectDetails = () => {
                     </Col>
                     <Col>
                       <Form.Group controlId="formConfiguration">
-                        <Form.Label>Configuration</Form.Label>
+                        {/* <Form.Label>Configuration</Form.Label> */}
                         <Form.Control
+                        className="form-inputs"
                           type="text"
                           placeholder="Enter configuration"
                           {...register("configuration", { required: true })}
@@ -266,8 +314,9 @@ const ProjectDetails = () => {
                     </Col>
                     <Col>
                       <Form.Group controlId="formReraId">
-                        <Form.Label>Rera Id</Form.Label>
+                        {/* <Form.Label>Rera Id</Form.Label> */}
                         <Form.Control
+                        className="form-inputs"
                           type="text"
                           placeholder="Enter Rera Id"
                           {...register("reraId", { required: true })}
@@ -275,6 +324,7 @@ const ProjectDetails = () => {
                         {errors.reraId && <p>This field is required</p>}
                       </Form.Group>
                     </Col>
+                    <Col></Col>
                   </Row>
 
                   <Row className="mb-3">
@@ -282,9 +332,10 @@ const ProjectDetails = () => {
                       className="mb-3"
                       controlId="exampleForm.ControlTextarea1"
                     >
-                      <Form.Label>About Us</Form.Label>
+                      <Form.Label className="list-pergraph">About Us</Form.Label>
                       <Form.Control
                         as="textarea"
+                        placeholder="Write About Projects..."
                         rows={5}
                         {...register("aboutUs", { required: true })}
                       />
@@ -292,12 +343,13 @@ const ProjectDetails = () => {
                     </Form.Group>
                   </Row>
 
-                  <p>Height Price & Floor Plan</p>
+                  <p className="list-pergraph">Height Price & Floor Plan</p>
                   <Row className="mb-3">
                     <Col>
                       <Form.Group controlId="formReraId">
-                        <Form.Label>Floor</Form.Label>
+                        {/* <Form.Label>Floor</Form.Label> */}
                         <Form.Control
+                        className="form-inputs"
                           type="text"
                           placeholder="2 BHK"
                           {...register("floor", { required: true })}
@@ -308,8 +360,9 @@ const ProjectDetails = () => {
 
                     <Col>
                       <Form.Group controlId="formReraId">
-                        <Form.Label>Height</Form.Label>
+                        {/* <Form.Label>Height</Form.Label> */}
                         <Form.Control
+                          className="form-inputs"
                           type="text"
                           placeholder="696 Sq. Ft."
                           {...register("height", { required: true })}
@@ -319,8 +372,9 @@ const ProjectDetails = () => {
                     </Col>
                     <Col>
                       <Form.Group controlId="formReraId">
-                        <Form.Label>Price</Form.Label>
+                        {/* <Form.Label>Price</Form.Label> */}
                         <Form.Control
+                          className="form-inputs"
                           type="text"
                           placeholder="₹ 68.04 Lakhs"
                           {...register("price", { required: true })}
@@ -331,7 +385,7 @@ const ProjectDetails = () => {
                   </Row>
 
                   <div>
-                    <p className="mb-0">Property Broucher</p>
+                    {/* <p className="mb-0">Property Broucher</p> */}
                     <div className="project">
                       {broucher.map((broucher, index) => (
                         <div key={index} style={{ position: "relative" }}>
@@ -365,7 +419,7 @@ const ProjectDetails = () => {
                   </div>
 
                   <div>
-                    <p className="mb-0">Project Tour : Photos & Videos</p>
+                    <p className="mb-0 list-pergraph mt-md-3 mt-3">Project Tour : Photos & Videos</p>
                     <div className="project">
                       {tour.map((tour, index) => (
                         <div key={index} style={{ position: "relative" }}>
@@ -395,19 +449,23 @@ const ProjectDetails = () => {
                     </div>
                   </div>
 
-                  <Row>
+                  <Row className="mb-3 ">
+                  <p className="mb-3 list-pergraph mt-md-3 mt-3">Project Tour : Amenities</p>
                     <Col>
-                      <Form.Group controlId="formChildrensPlayArea">
+                      <Form.Group className="last-flex" controlId="formChildrensPlayArea">
+                        <Image src={"/img/icons/children.svg"} alt="icon" width={27} height={27} />
                         <Form.Check
                           type="checkbox"
                           label="Childrens Play Area"
                           {...register("childrensPlayArea")}
                         />
+
                       </Form.Group>
                     </Col>
 
                     <Col>
-                      <Form.Group controlId="formCarParking">
+                      <Form.Group  className="last-flex" controlId="formCarParking">
+                      <Image src={"/img/icons/carparking.svg"} alt="icon" width={27} height={27} />
                         <Form.Check
                           type="checkbox"
                           label="Car Parking"
@@ -417,7 +475,8 @@ const ProjectDetails = () => {
                     </Col>
 
                     <Col>
-                      <Form.Group controlId="formYogaMeditationArea">
+                      <Form.Group  className="last-flex" controlId="formYogaMeditationArea">
+                      <Image src={"/img/icons/yoga.svg"} alt="icon" width={27} height={27} />
                         <Form.Check
                           type="checkbox"
                           label="Yoga/Meditation Area"
@@ -427,7 +486,8 @@ const ProjectDetails = () => {
                     </Col>
 
                     <Col>
-                      <Form.Group controlId="formStreetLighting">
+                      <Form.Group  className="last-flex" controlId="formStreetLighting">
+                      <Image src={"/img/icons/Street.svg"} alt="icon" width={27} height={27} />
                         <Form.Check
                           type="checkbox"
                           label="Street Lighting"
@@ -437,7 +497,8 @@ const ProjectDetails = () => {
                     </Col>
 
                     <Col>
-                      <Form.Group controlId="formLandscapingAndTrees">
+                      <Form.Group className="last-flex" controlId="formLandscapingAndTrees">
+                      <Image src={"/img/icons/tree.svg"} alt="icon" width={27} height={27} />
                         <Form.Check
                           type="checkbox"
                           label="Landscaping & Tree…"
@@ -447,7 +508,8 @@ const ProjectDetails = () => {
                     </Col>
 
                     <Col>
-                      <Form.Group controlId="formCCTV">
+                      <Form.Group className="last-flex" controlId="formCCTV">
+                      <Image src={"/img/icons/cctv.svg"} alt="icon" width={27} height={27} />
                         <Form.Check
                           type="checkbox"
                           label="CCTV"
@@ -459,7 +521,8 @@ const ProjectDetails = () => {
 
                   <Row>
                     <Col>
-                      <Form.Group controlId="form24x7Security">
+                      <Form.Group  className="last-flex" controlId="form24x7Security">
+                      <Image src={"/img/icons/Security.svg"} alt="icon" width={27} height={27} />
                         <Form.Check
                           type="checkbox"
                           label="24x7 Security"
@@ -469,7 +532,8 @@ const ProjectDetails = () => {
                     </Col>
 
                     <Col>
-                      <Form.Group controlId="formPowerBackup">
+                      <Form.Group className="last-flex" controlId="formPowerBackup">
+                      <Image src={"/img/icons/Power.svg"} alt="icon" width={27} height={27} />
                         <Form.Check
                           type="checkbox"
                           label="Power Backup"
@@ -477,14 +541,19 @@ const ProjectDetails = () => {
                         />
                       </Form.Group>
                     </Col>
+                    <Col></Col>
+                    <Col></Col>
+                    <Col></Col>
+                    <Col></Col>
                   </Row>
 
-                  <p>Project Tour : Specifications</p>
-                  <p>Floor & Counter</p>
-                  <Row>
+                  <p className="list-pergraph mt-md-2 mt-5 mt-md-4">Project Tour : Specifications</p>
+                  <p className="list-pergraph mt-md-3 mt-3">Floor & Counter</p>
+                  <Row className="mb-md-3 mb-3">
                     <Col>
-                      <Form.Group controlId="formLivingDining">
+                      <Form.Group  controlId="formLivingDining">
                         <Form.Control
+                        className="form-inputs"
                           type="text"
                           placeholder="Living/Dining"
                           {...register("livingDining", { required: true })}
@@ -496,6 +565,7 @@ const ProjectDetails = () => {
                     <Col>
                       <Form.Group controlId="formMasterBedroom">
                         <Form.Control
+                        className="form-inputs"
                           type="text"
                           placeholder="Master Bedroom"
                           {...register("masterBedroom", { required: true })}
@@ -507,6 +577,7 @@ const ProjectDetails = () => {
                     <Col>
                       <Form.Group controlId="formOtherBedroom">
                         <Form.Control
+                        className="form-inputs"
                           type="text"
                           placeholder="Other Bedroom"
                           {...register("otherBedroom", { required: true })}
@@ -520,6 +591,7 @@ const ProjectDetails = () => {
                     <Col>
                       <Form.Group controlId="formKitchen">
                         <Form.Control
+                        className="form-inputs"
                           type="text"
                           placeholder="Kitchen"
                           {...register("kitchen", { required: true })}
@@ -531,6 +603,7 @@ const ProjectDetails = () => {
                     <Col>
                       <Form.Group controlId="formToilets">
                         <Form.Control
+                        className="form-inputs"
                           type="text"
                           placeholder="Toilets"
                           {...register("toilets", { required: true })}
@@ -542,6 +615,7 @@ const ProjectDetails = () => {
                     <Col>
                       <Form.Group controlId="formBalcony">
                         <Form.Control
+                        className="form-inputs"
                           type="text"
                           placeholder="Balcony"
                           {...register("balcony", { required: true })}
@@ -552,7 +626,7 @@ const ProjectDetails = () => {
                   </Row>
 
                   <div>
-                    <p className="mb-0">Upload PDF</p>
+                    <p className="list-pergraph mt-md-2 mt-4 mt-md-4">Project Tour : Broucher</p>
                     <div className="project" style={{}}>
                       {pdfs.map((pdf, index) => (
                         <div key={index} style={{ position: "relative" }}>
