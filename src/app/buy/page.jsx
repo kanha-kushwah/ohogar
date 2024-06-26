@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Link from "next/link";
 import BuySlide from "../components/LandingPage/BuySlide";
@@ -10,8 +9,8 @@ import BuyCollection from "../components/LandingPage/BuyCollection";
 import BuyFive from "../components/LandingPage/BuyFive";
 import Footer from "../components/Footer/Footer";
 import Dailloge from "../components/Dailoge/Dailloge";
-import AddUser from "../components/AddUser";
-import Step5 from "../components/Dailoge/Step5";
+
+
 
 const page = () => {
   return (

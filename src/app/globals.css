@@ -902,6 +902,44 @@ button.accordion-button {
     box-shadow: -2.23px 2.23px 35.62px 0#0000000a
 }
 
+.w-54{
+    width: 54%;
+}
+.add-list-header input {
+    height: 46px;
+    border: none;
+    border-radius: 13px;
+    padding: 14px;
+}
+#header1 select.form-select {
+    background-color: transparent;
+    color: #fff;
+    filter: brightness(0) invert(1);
+    border: none;
+}
+
+#header1  select.form-select option {
+color: #000;
+}
+
+.active-slide {
+border-bottom: 4.69px solid #5E23DC;
+font-size: 19.36px;
+font-weight: 300;
+line-height: 30.5px;
+  }
+  .active-slide h6{
+    color: #5E23DC !important;
+  }
+  .swiper-slide {
+    cursor: pointer;
+  }
+  .sticky-slider {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Adjust z-index to make sure it stays on top if necessary */
+  }
 @media (max-width:1400px) {
     .container {
         max-width: 92%!important

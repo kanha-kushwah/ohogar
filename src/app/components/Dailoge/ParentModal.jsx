@@ -5,7 +5,7 @@ import OtpDialog from './OtpDialog';
 import './Dailloge.css';
 import MultiFormDialog from './MultiFormDialog';
 import Postproperty from './Postproperty';
-import ProjectDetails from '../ProjectDetails/ProjectDetails';
+
 
 const ParentModal = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -32,7 +32,6 @@ const ParentModal = () => {
       <Sidebar handleShow={handleShowLogin} />
       <MultiFormDialog show={showMultiForm} handleClose={handleCloseMultiForm} />
       <Postproperty show={showPostProperty} handleClose={handleCloseProperty} />
-      <ProjectDetails/>
     </div>
   );
 };

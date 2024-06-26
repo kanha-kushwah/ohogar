@@ -31,29 +31,31 @@ const HeaderSingle = () => {
       <section id="header1" className="py-sm-2 py-2 header-single mb-4">
         <div className="container">
           <div className="row py-md-4 px-md-0">
-            <div className="col-md-2 col-2">
+            <div className="col-md-3 col-3 d-flex g-20">
               <div className="logo">
                 <Link href="/">
                   <Image src="/img/footer-logo.svg" alt="Logo" width={103}
                     height={32} />
                 </Link>{" "}
               </div>
+
+              <div className=" d-none d-sm-block">
+                 <select className="form-select" aria-label="Default select example">
+                    <option selected>Buy in Bhopal</option>
+                    <option value="1">Indore, Madhya Pardesh</option>
+                  </select>
+                 
+                </div>
+
             </div>
-            <div className="col-md-10 col-10 align-self-end">
+            <div className="col-md-9 col-9 align-self-end">
               <div className="d-flex justify-content-end heder-gap align-items-center">
               
 
-                <div className=" d-none d-sm-block">
-                 <div className="map d-flex align-items-center"> 
-                 <select className="form-select" aria-label="Default select example">
-                    <option selected>Ahmedabad, Gujarat</option>
-                    <option value="1">Indore, Madhya Pardesh</option>
-                  </select>
-                 </div>
-                </div>
+              
 
 
-                <div className="d-none d-sm-block w-25" >
+                <div className="d-none d-sm-block w-54 add-list-header" >
                  <div className="map d-flex align-items-center"> 
                  <input className="w-100" type="search" placeholder="Search" />
                  </div>
