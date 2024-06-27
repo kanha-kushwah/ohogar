@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+
 
 export const TourPhotosvideo = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,7 +89,7 @@ export const TourPhotosvideo = () => {
           )}
         </div>
 
-        {isOpen && (
+        {/* {isOpen && (
           <Lightbox
             mainSrc={images[photoIndex]}
             nextSrc={images[(photoIndex + 1) % images.length]}
@@ -105,7 +104,7 @@ export const TourPhotosvideo = () => {
             enableZoom={false}
             reactModalProps={{ shouldCloseOnOverlayClick: true }}
           />
-        )}
+        )} */}
       </div>
     </section>
   );
