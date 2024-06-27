@@ -26,23 +26,39 @@ const PostSingle = ({ post }) => {
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-12">
-            <p>Home / Bhopal / Kolar / Road Madhuram Height / {post}</p>
+            <p className='bedcrums'>Home / Bhopal / Kolar / Road Madhuram Height / {post}</p>
           </div>
-          <div className="col-md-6 col-12  text-end">
-            <p>Last updated: May 29, 2024</p>
+          <div className="bedcrums-right col-md-6 col-12 text-md-end text-start">
+            <p className='withe-f7'>Last updated: May 29, 2024 <span className='pointer ms-2'><Image
+                  src="/img/icons/info.svg"
+                  width={14}
+                  height={14}
+                  alt="info"
+                /></span></p>
           </div>
           <div className="col-md-6 col-12">
-            <h3>Madhuram Height</h3>
-            <h6>By Madhuban Group</h6>
-            <span>4.2</span> <button>Write a Review</button>
+            <h3 className='single-title'>Madhuram Height</h3>
+            <h6 className='mb-4'>By <span className='dark-blue text-uppercase'> Madhuban Group</span></h6>
+
+            <span className='rating'> <span className='pointer me-1'><Image
+                  src="/img/icons/star.svg"
+                  width={14}
+                  height={14}
+                  alt="info"
+                /></span> 4.2</span> <button className='rate-review'>Write a Review</button>
           </div>
-          <div className="col-md-6 col-12 text-end">
-            <h3>Madhuram Height</h3>
-            <h6>By Madhuban Group</h6>
-            <button>Contact Developer</button>
+          <div className="col-md-6 col-12 text-md-end text-start mt-md-0 mt-4">
+            <h3>₹38.0 L <span className='sp-size'>₹5.46 K/sq.ft</span></h3>
+            <p className='dark-blue'>EMI starts at ₹20.12 K</p>
+            <button className='contact-dev'><span className='me-2'><Image
+                  src="/img/icons/phone.svg"
+                  width={14}
+                  height={14}
+                  alt="info"
+                /></span> Contact Developer</button>
           </div>
 
-          <div className="col-md-12 col-12">
+          <div className="col-md-12 col-12 mt-4 mt-md-5">
             <div class="container-grid">
               <div className="overlay-img big-image">
                 <Image
@@ -78,19 +94,19 @@ const PostSingle = ({ post }) => {
           </div>
 
           <div className="col-md-12 my-md-4 mt-md-4 mt-4 d-flex flex-wrap align-items-center justify-content-between">
-            <div className="inner-items-sin mb-2 text-center">
+            <div className="inner-items-sin mb-3 text-md-center text-start">
               <h6 className="">2 BHK Apartment</h6>
               <p className="m-0">Configuration</p>
             </div>
-            <div className="inner-items-sin mb-2 text-center">
+            <div className="inner-items-sin mb-3 text-md-center text-start">
               <h6 className="">Ready to Move</h6>
               <p className="m-0">Possession Status</p>
             </div>
-            <div className="inner-items-sin mb-2 text-center">
+            <div className="inner-items-sin mb-3 text-md-center text-start">
               <h6 className="">₹5.46 K/sq.ft</h6>
               <p className="m-0">Avg. Price</p>
             </div>
-            <div className="inner-items-sin mb-2 text-center">
+            <div className="inner-items-sin mb-3 text-md-center text-start">
               <h6 className="m-0">696 sq.ft.</h6>
               <p className="m-0">(Builtup Area)</p>
               <h6>Size</h6>
@@ -109,7 +125,7 @@ const PostSingle = ({ post }) => {
             </div>
         </StickyBox>
 
-        <div className="row mb-md-4 mb-4">
+        <div className="row mb-md-4 mb-4 flex-reverse">
           <div className="col-md-8">
             <section id="overview"> 
              <div className="single-page-box-first" >
@@ -148,9 +164,9 @@ const PostSingle = ({ post }) => {
 
           </div>
 
-          <div className="col-md-4">
+          <div className="col-md-4 mb-md-0 mb-4">
             <StickyBox offsetTop={90} offsetBottom={10}>
-              <div className="single-page-box">
+              <div className="single-page-box ">
               <Rightsidebar/>
               </div>
             </StickyBox>
