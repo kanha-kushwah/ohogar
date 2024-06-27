@@ -49,8 +49,8 @@ const ListDetails = () => {
 
       <section id="form-details">
         <div className="container">
-          <div className="custom-h d-flex g-20">
-          <div className="col-3 bg-detils">
+          <div className="custom-h d-flex g-20 flex-wrap">
+          <div className="col-md-3 col-12 bg-detils">
               <Link href="/list-property/propertydeatails">
                 <p className="list-button">
                   <i class="bi bi-chevron-left"></i> Go Back
@@ -85,7 +85,7 @@ const ListDetails = () => {
 
 
 
-            <div className="col bg-detils right-side">
+            <div className="bg-detils right-side">
               <h2 className="list-bar-heading">Add Price Details</h2>
 
               <div className="type mt-md-5 mt-5">

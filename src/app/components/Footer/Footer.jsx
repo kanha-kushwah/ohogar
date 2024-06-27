@@ -5,7 +5,7 @@ const Footer = () => {
     <section id="footer">
       <div className="container-footer">
         <div className="row text-white justify-content-between">
-          <div className="col-md-4">
+          <div className="col-md-4 mb-5 mb-md-0">
             <b></b>
             <div>
               {" "}
@@ -39,7 +39,7 @@ const Footer = () => {
 
           <div className="col-md-2">
             <b>Quick links</b>{" "}
-            <ul className="mt-5 footer-list li-mb">
+            <ul className="mt-md-5 mt-3 footer-list li-mb">
               <li>Buy</li>
               <li>Rent</li>
               <li>Commercial</li>
@@ -51,7 +51,7 @@ const Footer = () => {
             <div>
               {" "}
               <b>Company</b>
-              <ul  className="mt-5 footer-list li-mb">
+              <ul  className="mt-md-5 mt-3 footer-list li-mb">
                 <li>About us</li>
                 <li>List Property </li>
               </ul>

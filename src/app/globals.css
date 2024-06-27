@@ -948,6 +948,9 @@ line-height: 30.5px;
     color: #9494A2;
     margin-bottom: 10px !important;
 }
+.m-w-50{
+    width: 50%;
+    }
 @media (max-width:1400px) {
     .container {
         max-width: 92%!important
@@ -965,6 +968,10 @@ line-height: 30.5px;
 }
 
 @media (max-width:767px) {
+    #footer {
+        background: #313265;
+        padding: 40px 0;
+    }
     .check-be:before {
         background-size: 14px;
     }

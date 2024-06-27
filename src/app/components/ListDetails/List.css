@@ -11,7 +11,7 @@
   border-radius: 10px;
   background: #f2f3f8;
   padding: 15px;
-  height: 710px;
+  min-height: 710px;
   overflow: auto;
 }
 .style-radio label.form-check-label {
@@ -243,4 +243,19 @@ input.form-inputs {
   display: inline-block;
   font-size: 12px;
   padding: 9px 13px;
+}
+
+@media(max-width:767px){
+  .bg-detils {
+    border: solid 1px #e2e2e2;
+    border-radius: 10px;
+    background: #f2f3f8;
+    padding: 15px;
+    min-height: auto;
+  }
+  #form-details .custom-h {
+    min-height: 400px;
+    margin-top: -190px;
+    padding: 10px;
+}
 }
