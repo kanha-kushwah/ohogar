@@ -21,9 +21,10 @@ const Login = ({ show, handleClose, handleShowOtp }) => {
 
   useEffect(() => {
     if (user?.phone) {
-      setPhone(user?.phone);
+      setPhone(user.phone);
     }
-  }, []);
+  }, [user]);
+  
   
   const handlePhoneChange = (value) => setPhone(value);
 

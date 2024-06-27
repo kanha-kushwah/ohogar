@@ -77,20 +77,20 @@ const PostSingle = ({ post }) => {
             </div>
           </div>
 
-          <div className="col-md-12 my-md-4 d-flex align-items-center">
-            <div className="col-md-3 col-12 text-center">
+          <div className="col-md-12 my-md-4 mt-md-4 mt-4 d-flex flex-wrap align-items-center justify-content-between">
+            <div className="inner-items-sin mb-2 text-center">
               <h6 className="">2 BHK Apartment</h6>
               <p className="m-0">Configuration</p>
             </div>
-            <div className="col-md-3 col-12 text-center">
+            <div className="inner-items-sin mb-2 text-center">
               <h6 className="">Ready to Move</h6>
               <p className="m-0">Possession Status</p>
             </div>
-            <div className="col-md-3 col-12 text-center">
+            <div className="inner-items-sin mb-2 text-center">
               <h6 className="">₹5.46 K/sq.ft</h6>
               <p className="m-0">Avg. Price</p>
             </div>
-            <div className="col-md-3 col-12 text-center">
+            <div className="inner-items-sin mb-2 text-center">
               <h6 className="m-0">696 sq.ft.</h6>
               <p className="m-0">(Builtup Area)</p>
               <h6>Size</h6>

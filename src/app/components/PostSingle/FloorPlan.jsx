@@ -41,7 +41,7 @@ export const FloorPlan = () => {
 
 <div className="fllor-img">
   <h5 className='my-3'><b>₹ 38.0 L</b></h5>
-  <Image src={"/img/single/flore.png"} alt='img' width={712} height={311}/>
+  <Image className='img-100' src={"/img/single/flore.png"} alt='img' width={712} height={311}/>
 </div>
 
 

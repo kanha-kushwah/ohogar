@@ -210,3 +210,9 @@ p.text-floor {
 .items-specification {
   width: 33.33%;
 }
+@media(max-width:767px){
+.img-100{
+  width: 100%;
+  object-fit: contain;
+}
+}
