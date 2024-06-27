@@ -119,3 +119,15 @@ color: #313265;
     font-size: 14px;
     font-weight: 600;
 }
+
+@media(max-width:767px){
+    #moadal .modal-body {
+        padding: 20px 20px;
+    }
+    .otp-box input {
+        width: 45px !important;
+        height: 45px !important;
+        border: none;
+        border-radius: 12px;
+    }
+}

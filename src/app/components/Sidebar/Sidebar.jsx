@@ -24,17 +24,17 @@ const Sidebar = ({ handleShow }) => {
               </div>
             </div>{" "}
           </div>
-          <div className="col-md-4 text-end">
+          <div className="col-md-4 text-md-end text-start">
             {" "}
             <button className="login" onClick={handleShow}>Login</button>{" "}
           </div>
 
-          <div className="col-12 mt-md-4 sidebar-box">
+          <div className="col-12 mt-md-4 mt-4 sidebar-box">
             <div className="col">
               <h4>My Activity</h4>
             </div>
-            <div className="d-flex g-20 mt-4">
-              <div className="col">
+            <div className="d-flex flex-wrap g-20 mt-4">
+              <div className="sidebar-itmes">
                 <div className="text-center box-active active">
                   <Image
                     className="mb-2"
@@ -47,7 +47,7 @@ const Sidebar = ({ handleShow }) => {
                   <span>0</span>
                 </div>
               </div>
-              <div className="col">
+              <div className="sidebar-itmes">
                 <div className="text-center box-active ">
                   <Image
                     className="mb-2"
@@ -60,7 +60,7 @@ const Sidebar = ({ handleShow }) => {
                   <span>0</span>
                 </div>
               </div>
-              <div className="col">
+              <div className="sidebar-itmes">
                 <div className="text-center box-active ">
                   <Image
                     className="mb-2"
@@ -73,7 +73,7 @@ const Sidebar = ({ handleShow }) => {
                   <span>0</span>
                 </div>
               </div>
-              <div className="col">
+              <div className="sidebar-itmes">
                 <div className="text-center box-active">
                   <Image
                     className="mb-2"
@@ -126,7 +126,7 @@ const Sidebar = ({ handleShow }) => {
             </div>
           </div>
 
-          <div className="col-12 mt-md-4 sidebar-box">
+          <div className="col-12 mt-md-4 mt-4 sidebar-box">
             <div className="col-md-12">
               <div class="accordion" id="accordionPanelsStayOpenExample">
                 <div class="accordion-item">
@@ -316,17 +316,19 @@ const Sidebar = ({ handleShow }) => {
           </div>
 
           <div className="col-md-12 mt-4 sidebar-box">
-            <div className="d-flex g-20 justify-content-between align-items-center">
+            <div className="d-flex flex-wrap g-20 justify-content-between align-items-center">
               <div className="in-box">
                 <p> Download Housing App</p>
                 <div className="d-flex g-20 ">
                   <Image
+                  className="sidebar-itmes"
                     src="/img/paly-store.png"
                     alt="img"
                     height={46}
                     width={155}
                   />
                   <Image
+                  className="sidebar-itmes"
                     src="/img/app-store.png"
                     alt="img"
                     height={46}
