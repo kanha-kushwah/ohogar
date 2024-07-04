@@ -100,7 +100,7 @@ const BuySlide = () => {
           {slides.map((slide) => (
              
             <SwiperSlide key={slide.id}>
-              <Link className="text-white" href={`/buy/${slide.id}`}>
+              <Link className="text-white" href={`/buy/${slide.title.toLowerCase().replace(/\s+/g, '-')}`}>
               <div className="d-flex">
                 <Image
                   style={{ width: "100%", height: "100%" }}

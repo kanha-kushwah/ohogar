@@ -28,11 +28,6 @@ const Login = ({ show, handleClose, handleShowOtp }) => {
   
   const handlePhoneChange = (value) => setPhone(value);
 
-  // useEffect(() => {
-  //   if (user && user.token) {
-  //     toast.info("You are already logged in.");
-  //   }
-  // }, [user]);
 
   const handleGetOtp = async (e) => {
     e.preventDefault();
@@ -63,6 +58,7 @@ const Login = ({ show, handleClose, handleShowOtp }) => {
         handleShowOtp();
       } else {
         toast.error(response.data.message);
+    
       }
     } catch (error) {
       console.error(
@@ -70,6 +66,8 @@ const Login = ({ show, handleClose, handleShowOtp }) => {
         error.response ? error.response.data : error.message
       );
       toast.error(error.response ? error.response.data.message : error.message);
+      handleClose();
+      handleShowOtp();
     }
   };
 

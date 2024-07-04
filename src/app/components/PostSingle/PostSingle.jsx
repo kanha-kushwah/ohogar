@@ -14,19 +14,30 @@ import { FloorPlan } from "./FloorPlan";
 import { TourPhotosvideo } from './PhotosVideo';
 import { Amenities } from './Amenities';
 import { Specifications } from './Specifications';
+import Reviews from './reviews';
+import Brochure from './Brochure';
+import Viewmap from './Viewmap';
+import CompareProperties from './CompareProperties';
+import DeveloperInfo from './DeveloperInfo';
+import Qanda from './Qanda';
+import Faqs from './Faqs';
+import Projects from './Projects';
+import Quicklinks from './Quicklinks';
+import Housingnews from './Housingnews';
+import Disclaimer from './Disclaimer';
 
 const PostSingle = ({ post }) => {
   const [isSticky, setIsSticky] = useState(false);
+  const formattedTitle = post.toLowerCase().replace(/\s+/g, '-');
 
-
-
+console.log("formate",formattedTitle)
   return (
     <section>
       <HeaderSingle />
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-12">
-            <p className='bedcrums'>Home / Bhopal / Kolar / Road Madhuram Height / {post}</p>
+            <p className='bedcrums'>Home /buy/{formattedTitle}</p>
           </div>
           <div className="bedcrums-right col-md-6 col-12 text-md-end text-start">
             <p className='withe-f7'>Last updated: May 29, 2024 <span className='pointer ms-2'><Image
@@ -160,6 +171,50 @@ const PostSingle = ({ post }) => {
 
             <div className="single-page-box mt-md-3 mt-3">
             <Specifications/>
+            </div>
+
+            {/* <div className="single-page-box mt-md-3 mt-3">
+            <Reviews/>
+            </div> */}
+
+            <div className="single-page-box mt-md-3 mt-3">
+            <Brochure/>
+            </div>
+
+            <div className="single-page-box mt-md-3 mt-3">
+            <Viewmap/>
+            </div>
+
+            <div className="single-page-box mt-md-3 mt-3">
+            <CompareProperties/>
+            </div>
+
+            <div className="single-page-box mt-md-3 mt-3">
+            <DeveloperInfo/>
+            </div>
+
+            <div className="single-page-box mt-md-3 mt-3">
+            <Qanda/>
+            </div>
+
+            <div className="single-page-box mt-md-3 mt-3">
+            <Faqs/>
+            </div>
+
+            <div className="single-page-box mt-md-3 mt-3">
+            <Projects/>
+            </div>
+            
+            <div className="single-page-box mt-md-3 mt-3">
+            <Housingnews/>
+            </div>
+
+            <div className="single-page-box mt-md-3 mt-3">
+            <Quicklinks/>
+            </div>
+
+            <div className=" mt-md-3 mt-3">
+            <Disclaimer/>
             </div>
 
           </div>

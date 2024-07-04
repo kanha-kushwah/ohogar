@@ -32,14 +32,30 @@ export const Specifications = () => {
       <Accordion.Item eventKey="1">
         <Accordion.Header>Fitting</Accordion.Header>
         <Accordion.Body>
-       fdgfgdf
+        <div className="d-flex flex-wrap mb-2">
+<div className=" items-specification"><p className='odd-white mb-1 p-samll-m'>Living/Dining</p> <p className='text-black mb-0 p-samll-m'>Vitrified Tiles</p> </div>
+<div className=" items-specification"><p className='odd-white mb-1 p-samll-m'>Master Bedroom</p> <p className='text-black mb-0 p-samll-m'>Vitrified Tiles</p> </div>
+<div className=" items-specification"><p className='odd-white mb-1 p-samll-m'>Other Bedroom</p> <p className='text-black mb-0 p-samll-m'>Vitrified Tiles</p> </div>
+<div className=" items-specification mt-3"><p className='odd-white mb-1 p-samll-m'>Kitchen</p> <p className='text-black mb-0 p-samll-m'>Vitrified Tiles</p> </div>
+<div className=" items-specification mt-3"><p className='odd-white mb-1 p-samll-m'>Toilets</p> <p className='text-black mb-0 p-samll-m'>Premium Quality Tiles</p> </div>
+<div className=" items-specification mt-3"><p className='odd-white mb-1 p-samll-m'>Balcony</p> <p className='text-black mb-0 p-samll-m'>Anti skid ceramic tiles</p> </div>
+
+</div>
         </Accordion.Body>
       </Accordion.Item>
 
       <Accordion.Item eventKey="2">
         <Accordion.Header>Wall & Ceiling</Accordion.Header>
         <Accordion.Body>
-       fdgfgdf
+        <div className="d-flex flex-wrap mb-2">
+<div className=" items-specification"><p className='odd-white mb-1 p-samll-m'>Living/Dining</p> <p className='text-black mb-0 p-samll-m'>Vitrified Tiles</p> </div>
+<div className=" items-specification"><p className='odd-white mb-1 p-samll-m'>Master Bedroom</p> <p className='text-black mb-0 p-samll-m'>Vitrified Tiles</p> </div>
+<div className=" items-specification"><p className='odd-white mb-1 p-samll-m'>Other Bedroom</p> <p className='text-black mb-0 p-samll-m'>Vitrified Tiles</p> </div>
+<div className=" items-specification mt-3"><p className='odd-white mb-1 p-samll-m'>Kitchen</p> <p className='text-black mb-0 p-samll-m'>Vitrified Tiles</p> </div>
+<div className=" items-specification mt-3"><p className='odd-white mb-1 p-samll-m'>Toilets</p> <p className='text-black mb-0 p-samll-m'>Premium Quality Tiles</p> </div>
+<div className=" items-specification mt-3"><p className='odd-white mb-1 p-samll-m'>Balcony</p> <p className='text-black mb-0 p-samll-m'>Anti skid ceramic tiles</p> </div>
+
+</div>
         </Accordion.Body>
       </Accordion.Item>
 

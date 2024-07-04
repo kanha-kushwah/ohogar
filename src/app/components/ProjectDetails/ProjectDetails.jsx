@@ -108,7 +108,7 @@ const ProjectDetails = () => {
       <section id="form-details">
         <div className="container">
           <div className="custom-h d-flex g-20 flex-wrap">
-          <div className="col-12 col-md-12 bg-detils">
+          <div className="col-12 col-md-3 bg-detils">
               <Link href="/list-property/pricedetails">
                 <p className="list-button">
                   <i class="bi bi-chevron-left"></i> Go Back

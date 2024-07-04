@@ -15,7 +15,17 @@ const slidesContent = [
   "Floor Plan",
   "Tour This Project",
   "Amenities",
-  "Specifications"
+  "Specifications",
+  "Resident reviews",
+  "Brochure",
+  "Map View",
+  "Compare Properties",
+  "Developer Information",
+  "Questions Answers",
+  "FAQs",
+  "Projects",
+  "Housing News",
+  "Quick Links"
 ];
 
 const SingleSlider = () => {
@@ -31,7 +41,6 @@ const SingleSlider = () => {
   const handleScroll = () => {
     slidesContent.forEach((content, index) => {
       const section = document.getElementById(content.replace(/\s+/g, '-').toLowerCase());
-      console.log(section)
       if (section) {
         const rect = section.getBoundingClientRect();
         if (rect.top >= 0 && rect.top < window.innerHeight) {
@@ -44,7 +53,6 @@ const SingleSlider = () => {
   const handleClick = (index) => {
     const content = slidesContent[index];
     const section = document.getElementById(content.replace(/\s+/g, '-').toLowerCase());
-    console.log(section,index)
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
       setActiveIndex(index);

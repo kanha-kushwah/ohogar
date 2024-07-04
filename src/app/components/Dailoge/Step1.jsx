@@ -90,6 +90,7 @@ setValue('image', file)
         error.response ? error.response.data : error.message
       );
       toast.error(error.response ? error.response.data.message : error.message);
+      onNext(data);
     }
 
     

@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import Image from "next/image";
 import { Button } from "react-bootstrap";
 
-const Housingnews = () => {
+const Projects = () => {
   const slidesData = {
     ready: [
       {
@@ -15,21 +15,21 @@ const Housingnews = () => {
         title: "Madhuram Height",
         type: "2 BHK Flat",
         location: "Hinotiya Alam, Bhopal",
-        image: "/img/single/demo2.jpg",
+        image: "/img/demo1.jpg",
       },
       {
         price: "38.0 L",
         title: "Madhuram Height",
         type: "2 BHK Flat",
         location: "Hinotiya Alam, Bhopal",
-        image: "/img/single/demo2.jpg",
+        image: "/img/demo2.png",
       },
       {
         price: "38.0 L",
         title: "Madhuram Height",
         type: "2 BHK Flat",
         location: "Hinotiya Alam, Bhopal",
-        image: "/img/single/demo3.jpg",
+        image: "/img/demo3.png",
       },
       
     ],
@@ -37,9 +37,9 @@ const Housingnews = () => {
 
   return (
     <div>
-      <section id="housing-news">
+      <section id="projects">
         <div className="d-flex justify-content-between align-items-center border-bottom pb-2 pt-0">
-          <h6 className="big-heading text-black">Housing News</h6>
+          <h6 className="big-heading text-black">Projects By Madhuban Group near Kolar Road</h6>
         </div>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -61,7 +61,7 @@ const Housingnews = () => {
               slidesPerView: 2,
             },
             1000: {
-              slidesPerView: 2.2,
+              slidesPerView: 3,
             },
           }}
           className="dev-slider-box mt-4"
@@ -91,4 +91,4 @@ const Housingnews = () => {
   );
 };
 
-export default Housingnews;
+export default Projects;
