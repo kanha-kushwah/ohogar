@@ -21,10 +21,10 @@ const page = () => {
 
 
 
-      <section>
+      <section className="banner-buy buy-banner row align-items-center justify-content-center">
         <div className="container ">
-          <div className="row align-items-center justify-content-center banner-buy buy-banner">
-            <div className="col-md-7">
+          <div className="row align-items-center justify-content-center ">
+            <div className="col-md-6">
               <h1 className="text-white heding-xxl mt-5">
                 Trusted Place to Find a Home
               </h1>
@@ -61,6 +61,8 @@ const page = () => {
                   <option value="2">Bhopal</option>
                 </select>
                 <button className="search-btn">Search</button>
+                <button className="search-btn ms-3">Advance Filter</button>
+
               </div>
 
               <div className="box-ex text-center">

@@ -166,34 +166,7 @@ const ListProperty = () => {
                         />
                       </div>
 
-                      <div className="d-flex b-c-block g-20">
-                        <Form.Group
-                          className="mb-3 w-100"
-                          controlId="exampleForm.ControlInput1"
-                        >
-                          <PhoneInput
-                            country={"in"}
-                            value={phone}
-                            onChange={handlePhoneChange}
-                            inputStyle={{ width: "100%" }}
-                          />
-                        </Form.Group>
-                        <Form.Group
-                          className="mb-3 w-100"
-                          controlId="exampleForm.ControlInput1"
-                        >
-                          <Form.Control type="Name" placeholder="Name" />
-                        </Form.Group>
-                      </div>
-                      <div className="d-flex g-20">
-                        
-                        <Form.Group
-                          className="mb-3 m-w-50 pe-md-2 pe-0 m-w-100"
-                          controlId="exampleForm.ControlInput1"
-                        >
-                          <Form.Control type="search" placeholder="Search" />
-                        </Form.Group>
-                      </div>
+                    
 
         <Link href={"/list-property/propertydeatails"}>
                       <Button className="w-100" type="submit">

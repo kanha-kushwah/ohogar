@@ -6,6 +6,7 @@ import Image from "next/image";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "./../../components/ListDetails/List.css";
 import Link from "next/link";
+import Header from "../Header/Header";
 
 const ListDetails = () => {
   const [selectedOption, setSelectedOption] = useState();
@@ -42,6 +43,8 @@ const ListDetails = () => {
   return (
     <div>
       <section id="list-page-single">
+
+        <Header/>
         <div className="container">
           <div className="row md-pt-4 pt-4"></div>
         </div>

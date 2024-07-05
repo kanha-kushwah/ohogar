@@ -47,7 +47,7 @@ console.log('select',user)
     />
             </Form.Group>
             <p className='text-end'><b>Send code again</b> 00.20</p>
-            <Button className="start-btn mt-2 w-100" variant="primary" type="submit">
+            <Button className="start-btn mt-2 w-100 mb-md-0 mb-4" variant="primary" type="submit">
             Continue
             </Button>
             <p className="text-center mt-md-4 p-small">By login, you are accepting the terms & conditions</p>

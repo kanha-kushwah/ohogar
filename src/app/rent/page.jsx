@@ -10,10 +10,10 @@ const page = () => {
 <>
 <Header/>
 
-<section>
+<section className='row align-items-center justify-content-center banner-buy rent-banner'>
     <div className="container ">
-        <div className="row align-items-center justify-content-center banner-buy rent-banner">
-            <div className="col-md-7">
+        <div className="row align-items-center justify-content-center ">
+            <div className="col-md-6">
                <h1 className='text-white heding-xxl mt-5'>Properties for rent in Bhopal</h1>
                  
                  <div className="nav-box mt-md-4">

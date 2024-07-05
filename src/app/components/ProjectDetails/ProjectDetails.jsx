@@ -8,6 +8,7 @@ import "./../../components/ListDetails/List.css";
 import Link from "next/link";
 import Postproperty from "../Dailoge/Postproperty";
 import SuceesPost from "../Dailoge/SuceesPost";
+import Header from "../Header/Header";
 
 const ProjectDetails = () => {
   const [images, setImages] = useState([]);
@@ -99,6 +100,8 @@ const ProjectDetails = () => {
   return (
     <div>
       <section id="list-page-single">
+<Header/>
+
         <div className="container">
           <div className="row md-pt-4 pt-4"></div>
         </div>

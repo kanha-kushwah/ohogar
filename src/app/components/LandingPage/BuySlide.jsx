@@ -80,7 +80,7 @@ const BuySlide = () => {
              prevEl: ".swiper-button-prev1",
              nextEl: ".swiper-button-next1",
            }}
-           loop={true}
+           loop={false}
            breakpoints={{
              0: {
                slidesPerView: 1,
@@ -124,7 +124,22 @@ const BuySlide = () => {
               </Link>
             </SwiperSlide>
          
+         
           ))}
+
+<SwiperSlide>
+
+              <Link className="last-slide text-black" href="buy">
+              <div className="d-flex items-center bg-black">
+               
+                <div className="box-overlap box-overlap-last ">
+                  <div className="inner-one">
+                    <h3>View More</h3>
+                  </div>
+                </div>
+              </div>
+              </Link>
+            </SwiperSlide>
         </Swiper>
       </div>
     </section>

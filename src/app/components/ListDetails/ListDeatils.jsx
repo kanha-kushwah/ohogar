@@ -7,6 +7,7 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import "./List.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Header from "../Header/Header";
 
 const ListDetails = () => {
   const [selectedOption, setSelectedOption] = useState();
@@ -45,6 +46,7 @@ const ListDetails = () => {
   return (
     <div>
       <section id="list-page-single">
+        <Header/>
         <div className="container">
           <div className="row md-pt-4 pt-4"></div>
         </div>
