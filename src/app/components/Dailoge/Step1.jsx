@@ -1,29 +1,57 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button, Alert } from 'react-bootstrap';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import Image from 'next/image';
-import { useSelector } from 'react-redux';
-import BASE_URL from '@/config/config';
 import { toast } from "react-toastify";
-
+import { useDispatch, useSelector } from "react-redux";
+import { ThreeDots } from 'react-loader-spinner';
+import useAxiosInstance from '@/config/axiosInstance';
 
 const Step1 = ({ onNext }) => {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm();
   const [phone, setPhone] = useState('');
   const [imagePreview, setImagePreview] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const axiosInstance = useAxiosInstance();
 
   const user = useSelector((state) => {
     const users = state.adduser.users;
-    return users.length > 0 ? users[users.length - 1].user.data : null;
-   
+    return users?.length > 0 ? users[users?.length - 1].user?.data : null;
   });
+  console.log('user data',user.name,user.phone)
+ 
+  useEffect(() => {
+      const newPhone = localStorage.getItem('Phone');
+      console.log('hello' ,newPhone)
+      if (newPhone) {
+        setPhone(newPhone);
+      }
+ 
+  }, []);
+
+
+  useEffect(() => {
+    if (user) {
+      if (user.email) {
+        setValue('email', user.email);
+      }
+      if (user.name) {
+        setValue('name', user.name);
+      }
+    }
+  }, [user, setValue]);
 
   const handlePhoneChange = (value) => {
     setPhone(value);
     setValue('phone', value, { shouldValidate: true });
   };
+
+
+
+
 
   useEffect(() => {
     if (user?.phone) {
@@ -31,6 +59,8 @@ const Step1 = ({ onNext }) => {
       setValue('phone', user?.phone, { shouldValidate: true });
     }
   }, [user, setValue]);
+
+
 
 
   const handleImageChange = (event) => {
@@ -54,7 +84,7 @@ setValue('image', file)
 
   const onSubmit = async (data) => {
     console.log('Form Data:', data);  
-    
+    setLoading(true);
     const payload = {
       name:data.name,
       email:data.email,
@@ -71,15 +101,16 @@ setValue('image', file)
     };
 
     try {
-      const response = await BASE_URL.post("/api/register", payload, config);
+      const response = await axiosInstance.post("/api/login", payload, config);
       console.log("Response:", response.data);
 
       if (response.data.success) {
         // const token = response.data.data.token;
         // localStorage.setItem('token', token);
         toast.success(response.data.message);
-        // dispatch(addUser(response.data));
-      
+
+
+      console.log(response.data)
         onNext(data);
       } else {
         toast.error(response.data.message);
@@ -90,7 +121,8 @@ setValue('image', file)
         error.response ? error.response.data : error.message
       );
       toast.error(error.response ? error.response.data.message : error.message);
-      onNext(data);
+    }finally {
+      setLoading(false);
     }
 
     
@@ -107,6 +139,7 @@ setValue('image', file)
 
   return (
     <div className='w-100 step-input'>
+ 
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className='text-center box-im-style mb-4' controlId="formImage">
           <Form.Control 
@@ -149,12 +182,26 @@ setValue('image', file)
             value={phone}
             onChange={handlePhoneChange}
             inputStyle={{ width: '100%' }}
+            disabled
           />
           {errors.phone && <Alert variant="danger">{errors.phone.message}</Alert>}
         </Form.Group>
 
-        <Button className='start-btn w-100 btn btn-primary' variant="primary" type="submit" style={{ marginTop: '100px' }}>
-          Next
+        <Button className='start-btn w-100 btn btn-primary' variant="primary" disabled={loading} type="submit" style={{ marginTop: '100px' }}>
+        {loading ? (
+               <ThreeDots
+               visible={true}
+               height="20"
+               width="80"
+               color="#fff"
+               radius="9"
+               ariaLabel="three-dots-loading"
+               wrapperStyle={{}}
+               wrapperClass="text-center justify-content-center start-btn"
+               />
+              ) : (
+                "Next"
+              )}
         </Button>
       </Form>
       {/* Debugging: Log errors */}

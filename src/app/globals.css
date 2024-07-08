@@ -414,7 +414,9 @@ section#banner-five {
     font-size: 12px;
     color: #6b6b7db2
 }
-
+.sidebar-itmes{
+    width: 22%;
+  }
 .frea-p {
     color: #6b6b7db2;
     font-size: 14px;
@@ -682,7 +684,7 @@ button.btn-login {
 }
 
 #moadal .modal-body {
-    padding: 20px 40px;
+    padding: 20px 20px;
     background: #f2f3f8;
     border-radius: 20px;
     min-height: 580px;  
@@ -964,9 +966,7 @@ line-height: 30.5px;
     top: 0;
     z-index: 1000; /* Adjust z-index to make sure it stays on top if necessary */
   }
-  .sidebar-itmes{
-    width: 22%;
-  }
+
   .check-be {
     font-size: 12px;
     color: #9494A2;
@@ -992,6 +992,9 @@ line-height: 30.5px;
 }
 
 @media (max-width:767px) {
+    .sidebar-itmes{
+        width: 22%;
+      }
     #footer {
         background: #313265;
         padding: 40px 0;

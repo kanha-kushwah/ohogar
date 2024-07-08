@@ -25,10 +25,12 @@ import Projects from './Projects';
 import Quicklinks from './Quicklinks';
 import Housingnews from './Housingnews';
 import Disclaimer from './Disclaimer';
+import { usePathname } from 'next/navigation'
 
 const PostSingle = ({ post }) => {
   const [isSticky, setIsSticky] = useState(false);
   const formattedTitle = post.toLowerCase().replace(/\s+/g, '-');
+  const pathname = usePathname()
 
 console.log("formate",formattedTitle)
   return (
@@ -37,7 +39,7 @@ console.log("formate",formattedTitle)
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-12">
-            <p className='bedcrums'>Home /buy/{formattedTitle}</p>
+            <p className='bedcrums'>Home{pathname}</p>
           </div>
           <div className="bedcrums-right col-md-6 col-12 text-md-end text-start">
             <p className='withe-f7'>Last updated: May 29, 2024 <span className='pointer ms-2'><Image

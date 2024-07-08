@@ -2,10 +2,13 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import addReducer from './session'; // Ensure correct import
-
+import addReducer from './session';
+import tokenReducer from './token';
+import filterReducer from './filter';
 const rootReducer = combineReducers({
-  adduser: addReducer, // Ensure correct property name and import
+  adduser: addReducer,
+  addtoken: tokenReducer,
+  filterdata: filterReducer,
 });
 
 const persistConfig = {
@@ -19,7 +22,7 @@ export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false, // Disable serializable check for non-serializable values like functions
+      serializableCheck: false, 
     }),
 });
 

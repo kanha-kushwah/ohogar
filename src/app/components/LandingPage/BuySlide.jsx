@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
+import { usePathname } from 'next/navigation'
 
 const BuySlide = () => {
   // Define your slide data
@@ -38,6 +39,10 @@ const BuySlide = () => {
       priceRange: "₹53.03 L - 68.0 L",
     },
   ];
+  const location = usePathname();
+
+  const baseUrl = location === '/' ? 'buy' : location;
+  console.log(location,baseUrl)
 
   return (
     <>
@@ -100,7 +105,7 @@ const BuySlide = () => {
           {slides.map((slide) => (
              
             <SwiperSlide key={slide.id}>
-              <Link className="text-white" href={`/buy/${slide.title.toLowerCase().replace(/\s+/g, '-')}`}>
+              <Link className="text-white" href={`${baseUrl}/${slide.title.toLowerCase().replace(/\s+/g, '-')}`}>
               <div className="d-flex">
                 <Image
                   style={{ width: "100%", height: "100%" }}

@@ -1,7 +1,57 @@
-import React from "react";
+import React,{useState} from "react";
 import Image from "next/image";
+import useToken from "@/config/useToken";
+import { removeToken } from "@/redux/token";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import useAxiosInstance from "@/config/axiosInstance";
+import { removeUser } from "@/redux/session";
+
 
 const Sidebar = ({ handleShow }) => {
+const axiosInstance = useAxiosInstance();
+const token = useToken();
+const dispatch = useDispatch();
+const [loading, setLoading] = useState(false);
+
+
+const handlelogout = async () => {
+  setLoading(true);
+
+  const config = {
+    headers: {
+      accept: "application/json",
+    },
+  };
+
+  try {
+    const response = await axiosInstance.get("/api/logout", config);
+    console.log("Response:", response.data);
+
+    if (response.data.success) {
+      toast.success(response.data.message);
+      dispatch(removeToken());
+      dispatch(removeUser());
+      
+    } else {
+      toast.error(response.data.message);
+    }
+  } catch (error) {
+    console.error(
+      "Error:",
+      error.response ? error.response.data : error.message
+    );
+    toast.error(error.response ? error.response.data.message : error.message);
+  }finally {
+    setLoading(false);
+  }
+
+
+
+
+}
+
+// console.log('data he re baba' , token)
   return (
     <section id="sldierbar">
       <div className="container">
@@ -26,7 +76,9 @@ const Sidebar = ({ handleShow }) => {
           </div>
           <div className="col-md-4 text-md-end text-start">
             {" "}
-            <button className="login" onClick={handleShow}>Login</button>{" "}
+
+            {token ? <button className="login" onClick={handlelogout}>Logout</button>  :  <button className="login" onClick={handleShow}>Login</button>}
+           {" "}
           </div>
 
           <div className="col-12 mt-md-4 mt-4 sidebar-box">
@@ -97,7 +149,8 @@ const Sidebar = ({ handleShow }) => {
                   alt="mg"
                 />
               </div>
-              <button className="btn-login">Login to view your Recent Activity </button>
+            {token ? '' : <button className="btn-login">Login to view your Recent Activity </button> }
+            
             </div>
 
             <div className="col-md-12 mt-4">

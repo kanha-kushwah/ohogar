@@ -1,14 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,useContext} from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button, FormControl } from 'react-bootstrap';
 import Image from 'next/image';
+import { LocationContext } from '../Context/LocationContext';
 
 const Step3 = ({ onPrev, onNext }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [selectedCity, setSelectedCity] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Ahmedabad', 'Chennai', 'Kolkata', 'Surat', 'Pune', 'Jaipur', 'Indore'];
+  const [cities, setCities] = useState(['']);
+
+  // const [geTcity, cities] = useState([])
   const [selectedOption, setSelectedOption] = useState('');
+  const { location } = useContext(LocationContext);
+
+
+
+  useEffect(() => {
+    const cityNames = location?.data.map(location => location.name);
+    setCities(cityNames);
+  }, [location]);
 
   const onSubmit = (data) => {
     const finalData = { ...data, selectedCity };
@@ -74,7 +85,7 @@ const Step3 = ({ onPrev, onNext }) => {
 
         </Form.Group>
 
-        {/* <Button variant="secondary" type="button" onClick={onPrev}>Previous</Button> */}
+        <Button variant="secondary" type="button" onClick={onPrev}>Previous</Button>
         <Button className='start-btn w-100 btn btn-primary' variant="primary" type="submit" style={{ marginTop: '40px' }}>
           Next
         </Button>

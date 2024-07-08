@@ -3,11 +3,16 @@ import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addFilter } from "@/redux/filter";
 
 const Step5 = ({ formData, onPrev, onSubmit }) => {
   const { register, handleSubmit, setValue } = useForm({
     defaultValues: formData,
   });
+
+  const existingFilters = useSelector((state) => state.filterdata?.filter);
+  const dispatch = useDispatch();
 
   const [filters, setFilters] = useState({
     SelectInterest: formData?.SelectInterest || "",
@@ -22,6 +27,16 @@ const Step5 = ({ formData, onPrev, onSubmit }) => {
   });
 
   const [newLocality, setNewLocality] = useState("");
+
+  useEffect(() => {
+    if (existingFilters) {
+      setFilters((prevFilters) => ({
+        ...prevFilters,
+        ...existingFilters,
+        localities: existingFilters.localities || [],
+      }));
+    }
+  }, [existingFilters]);
 
   useEffect(() => {
     // Log the collected data for verification
@@ -53,6 +68,8 @@ const Step5 = ({ formData, onPrev, onSubmit }) => {
 
   const onFormSubmit = (data) => {
     onSubmit({ ...formData, ...filters });
+    const mergedData = { ...formData, ...filters, ...data };
+    dispatch(addFilter(mergedData));
   };
 
   return (
@@ -68,25 +85,25 @@ const Step5 = ({ formData, onPrev, onSubmit }) => {
 
       <div className="d-flex align-items-center justify-content-between">
         <p className="p-small">
-          Select Locality or Landmark in{" "}
+          You are searching in{" "}
           <span className="text-black">
             <b>{formData?.selectedCity} </b>
           </span>{" "}
         </p>
-        <p className="p-small text-right text-black pointer">Change city </p>
+        <p className="p-small text-right text-black pointer">Change Location</p>
       </div>
 
-      <div className="apply-filter mt-md-4 mt-4">
+      <div className="apply-filter mt-md-4 border-top pt-4">
         <p>Filter Applied</p>
-        <h5>{filters.localities.join(", ")}</h5>
+        <p>{filters.localities.join(", ")}</p>
       </div>
 
       <div className="filter-box">
-        <div className="inner-one-filter">
+        <div className="inner-one-filter mb-4">
           <p>
             <b>I’m Looking to</b>
           </p>
-          <div className="d-flex">
+          <div className="d-flex g-10">
             <button
               type="button"
               className={filters.SelectInterest === "Buy" ? "active" : ""}
@@ -103,43 +120,51 @@ const Step5 = ({ formData, onPrev, onSubmit }) => {
             </button>
             <button
               type="button"
-              className={filters.SelectInterest === "Commercial" ? "active" : ""}
-              onClick={() => setFilters({ ...filters, SelectInterest: "Commercial" })}
+              className={
+                filters.SelectInterest === "Commercial" ? "active" : ""
+              }
+              onClick={() =>
+                setFilters({ ...filters, SelectInterest: "Commercial" })
+              }
             >
               Commercial
             </button>
             <button
               type="button"
-              className={filters.SelectInterest === "PG/Co-Living" ? "active" : ""}
-              onClick={() => setFilters({ ...filters, SelectInterest: "PG/Co-Living" })}
+              className={
+                filters.SelectInterest === "PG/Co-Living" ? "active" : ""
+              }
+              onClick={() =>
+                setFilters({ ...filters, SelectInterest: "PG/Co-Living" })
+              }
             >
               PG/Co-Living
             </button>
           </div>
         </div>
 
-        <div className="inner-one-filter">
+        <div className="inner-one-filter mb-4">
           <p>
             <b>Localities</b>
           </p>
-          <div className="d-flex">
+          <div className="d-flex g-10">
+            <button type="button" onClick={handleAddLocality}>
+              + Add More
+            </button>
             <input
               type="text"
               value={newLocality}
               onChange={(e) => setNewLocality(e.target.value)}
               placeholder="Add Locality"
             />
-            <button type="button" onClick={handleAddLocality}>
-              + Add More
-            </button>
           </div>
         </div>
 
-        <div className="inner-one-filter">
+        <div className="inner-one-filter mb-4">
           <p>
             <b>BHK Type</b>
           </p>
-          <div className="d-flex">
+          <div className="d-flex g-10 radio-filter">
             <label>
               <input
                 type="radio"
@@ -183,10 +208,14 @@ const Step5 = ({ formData, onPrev, onSubmit }) => {
           </div>
         </div>
 
-        <div className="inner-one-filter">
+        <div className="inner-one-filter mb-4 w-75">
           <p>
             <b>Budget</b>
           </p>
+          <div className="d-flex justify-content-between mb-2">
+            <span>{filters.minBudget}</span>
+            <span>{filters.maxBudget}</span>
+          </div>
           <div className="d-flex">
             <Slider
               range
@@ -197,17 +226,33 @@ const Step5 = ({ formData, onPrev, onSubmit }) => {
               value={[filters.minBudget, filters.maxBudget]}
             />
           </div>
-          <div className="d-flex justify-content-between">
+        </div>
+
+        <div className="inner-one-filter mb-4 w-75">
+          <p>
+            <b>Built-up Area</b>
+          </p>
+          <div className="d-flex justify-content-between mb-2">
             <span>{filters.minBudget}</span>
             <span>{filters.maxBudget}</span>
           </div>
+          <div className="d-flex">
+            <Slider
+              range
+              min={0}
+              max={1000}
+              defaultValue={[filters.minBudget, filters.maxBudget]}
+              onChange={handleBudgetChange}
+              value={[filters.minBudget, filters.maxBudget]}
+            />
+          </div>
         </div>
 
-        <div className="inner-one-filter">
+        <div className="inner-one-filter mb-4">
           <p>
             <b>Property Type</b>
           </p>
-          <div className="d-flex">
+          <div className="d-flex g-10 radio-filter">
             <label>
               <input
                 type="radio"
@@ -231,11 +276,11 @@ const Step5 = ({ formData, onPrev, onSubmit }) => {
           </div>
         </div>
 
-        <div className="inner-one-filter">
+        <div className="inner-one-filter mb-4">
           <p>
             <b>Sale Type</b>
           </p>
-          <div className="d-flex">
+          <div className="d-flex g-10 radio-filter">
             <label>
               <input
                 type="radio"
@@ -259,11 +304,11 @@ const Step5 = ({ formData, onPrev, onSubmit }) => {
           </div>
         </div>
 
-        <div className="inner-one-filter">
+        <div className="inner-one-filter mb-4">
           <p>
             <b>Launched</b>
           </p>
-          <div className="d-flex">
+          <div className="d-flex g-10 radio-filter">
             <label>
               <input
                 type="radio"
@@ -297,11 +342,11 @@ const Step5 = ({ formData, onPrev, onSubmit }) => {
           </div>
         </div>
 
-        <div className="inner-one-filter">
+        <div className="inner-one-filter mb-4">
           <p>
             <b>Possession</b>
           </p>
-          <div className="d-flex">
+          <div className="d-flex g-10 radio-filter">
             <label>
               <input
                 type="radio"
@@ -344,16 +389,16 @@ const Step5 = ({ formData, onPrev, onSubmit }) => {
             </label>
           </div>
         </div>
-      </div>
 
-      <Button
-        className="start-btn w-100 btn btn-primary"
-        variant="primary"
-        type="submit"
-        style={{ marginTop: "40px" }}
-      >
-        View
-      </Button>
+        <Button
+          className="start-btn w-50 btn btn-primary"
+          variant="primary"
+          type="submit"
+          style={{ marginTop: "20px", background: "#313265", padding: "15px 0px" }}
+        >
+          View
+        </Button>
+      </div>
     </Form>
   );
 };

@@ -2,7 +2,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ImportBsJS from "./importBsJS";
 import { Providers } from "@/redux/provider";
+import { LocationProvider } from "./components/Context/LocationContext";
 import "react-phone-input-2/lib/style.css";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,9 +17,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <link rel="icon" href="/favicon.png" />
       <body className={inter.className}>
-      <Providers>{children}
-      </Providers>
-      <ImportBsJS /> 
+        <Providers>
+          <LocationProvider>
+            {children}
+          </LocationProvider>
+        </Providers>
+        <ImportBsJS /> 
       </body>
     </html>
   );

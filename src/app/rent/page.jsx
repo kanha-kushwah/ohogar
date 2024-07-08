@@ -5,6 +5,12 @@ import Link from 'next/link'
 
 import Header from '../../app/components/Header/Header'
 import BuySlide from '../../app/components/LandingPage/BuySlide'
+import Dailloge from '../components/Dailoge/Dailloge'
+import BuyFeatured from '../components/LandingPage/BuyFeatured'
+import BuyProperties from '../components/LandingPage/BuyProperties'
+import BuyCollection from '../components/LandingPage/BuyCollection'
+import BuyFive from '../components/LandingPage/BuyFive'
+import Footer from '../components/Footer/Footer'
 const page = () => {
   return (
 <>
@@ -43,7 +49,15 @@ const page = () => {
     </div>
 </section>
 
-<BuySlide/>
+<Dailloge/>
+      <BuySlide />
+      <BuyFeatured/>
+      <BuyProperties />
+      <BuyCollection />
+      <BuyFive />
+      <BuyProperties />
+      <BuyFeatured />
+      <Footer/>
 </>
   )
 }

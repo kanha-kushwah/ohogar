@@ -19,7 +19,7 @@ const Login = ({ show, handleClose, handleShowOtp }) => {
 
   const user = useSelector((state) => {
     const users = state.adduser.users;
-    return users.length > 0 ? users[users.length - 1].user.data : null;
+    return users?.length > 0 ? users[users?.length - 1].user?.data : null;
   });
 
   useEffect(() => {
@@ -69,6 +69,7 @@ const Login = ({ show, handleClose, handleShowOtp }) => {
         // dispatch(addUser(response.data));
         handleClose();
         handleShowOtp();
+        setPhone("")
       } else {
         toast.error(response.data.message);
     

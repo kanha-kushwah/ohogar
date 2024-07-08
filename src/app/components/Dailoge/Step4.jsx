@@ -135,6 +135,7 @@
 
 
           </Form.Group>
+        <Button variant="secondary" type="button" onClick={onPrev}>Previous</Button>
           <Button className='start-btn w-100 btn btn-primary' variant="primary" type="submit" style={{ marginTop: '40px' }}>
             Next
           </Button>

@@ -1,4 +1,3 @@
-// slice.js
 const { createSlice, nanoid } = require("@reduxjs/toolkit");
 
 const initialState = {
@@ -16,9 +15,12 @@ const Slice = createSlice({
         user: action.payload,
       };
       state.users.push(data);
+    }, 
+    removeUser: (state) => {
+      state.users = [];
     },
   },
 });
 
-export const { addUser } = Slice.actions;
+export const { addUser, removeUser } = Slice.actions;
 export default Slice.reducer;

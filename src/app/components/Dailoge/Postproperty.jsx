@@ -10,12 +10,13 @@ import SuceesPost from './SuceesPost';
 const Postproperty = ({ show, handleClose ,handleShowMultiForm }) => {
   const [otp, setOtp] = useState('');
   const [showPostSuceess, setShowPostSuceess] = useState(false);
+  
   const showPostSucees = () => setShowPostSuceess(true);
   const handleCloseSucees = () => setShowPostSuceess(false);
 
   const user = useSelector((state) => {
     const users = state.adduser.users;
-    return users.length > 0 ? users[users.length - 1].user.data : null;
+    return users?.length > 0 ? users[users?.length - 1].user.data : null;
   });
 
 
