@@ -8,7 +8,7 @@ import useAxiosInstance from "@/config/axiosInstance";
 import { removeUser } from "@/redux/session";
 
 
-const Sidebar = ({ handleShow }) => {
+const Sidebar = ({ handleShow}) => {
 const axiosInstance = useAxiosInstance();
 const token = useToken();
 const dispatch = useDispatch();
@@ -46,16 +46,13 @@ const handlelogout = async () => {
     setLoading(false);
   }
 
-
-
-
 }
 
-// console.log('data he re baba' , token)
   return (
     <section id="sldierbar">
       <div className="container">
         <div className="row align-items-center">
+ 
           <div className="col-md-8">
             {" "}
             <div className="d-flex g-20 align-items-center">
@@ -374,14 +371,14 @@ const handlelogout = async () => {
                 <p> Download Housing App</p>
                 <div className="d-flex g-20 ">
                   <Image
-                  className="sidebar-itmes"
+                  className="sidebar-itmes1  w-100"
                     src="/img/paly-store.png"
                     alt="img"
                     height={46}
                     width={155}
                   />
                   <Image
-                  className="sidebar-itmes"
+                  className="sidebar-itmes1 w-100"
                     src="/img/app-store.png"
                     alt="img"
                     height={46}

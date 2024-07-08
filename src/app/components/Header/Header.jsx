@@ -53,7 +53,9 @@ const token = useToken();
     <>
      {/* {loading && <Loader />} */}
 <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
-        {/* <button onClick={closebar}>Close Sidebar</button> */}
+       
+       <div className='text-end'><button className='close' onClick={closebar}>X</button>
+       </div> 
    <ParentModal/>
    <ProfileEdit show={showFilter} handleClose={handleClosefilter} />
       </div>

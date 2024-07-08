@@ -13,29 +13,46 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Teastimonial from "../Teastimonial/Teastimonial";
 import Footer from "../Footer/Footer";
 import useToken from "@/config/useToken";
-
+import Login from "../Dailoge/Login";
+import OtpDialog from "../Dailoge/OtpDialog";
+import './../Dailoge/Dailloge.css'
+import { toast } from "react-toastify";
 
 const ListProperty = () => {
   const [selected, setSelected] = useState("residential");
   const [getrent, setRent] = useState("rent");
+  const [showLogin, setShowLogin] = useState(false);
+  const [showOtp, setShowOtp] = useState(false);
   const token = useToken();
 
   const handleChangerent = (event) => {
     setRent(event.target.name);
   };
 
+  const handleShowOtp = () => setShowOtp(true);
+  const handleShowLogin = () => setShowLogin(true);
+  const handleCloseLogin = () => setShowLogin(false);
+
   const handleChange = (event) => {
     setSelected(event.target.name);
   };
 
+  const handleCloseOtp = () => setShowOtp(false);
   const [phone, setPhone] = useState("");
 
   const handlePhoneChange = (value) => {
     setPhone(value);
   };
 
+const goTOlogin = (e) => {
+  e.preventDefault();
+  handleShowLogin();
+}
+
   return (
     <>
+    <Login show={showLogin} handleClose={handleCloseLogin} handleShowOtp={handleShowOtp}/>
+    <OtpDialog show={showOtp} handleClose={handleCloseOtp}  />
       <section id="list-page">
         <div className="container">
           <div className="row md-pt-4 pt-4">
@@ -111,13 +128,15 @@ const ListProperty = () => {
                       <p className="text-white mb-0">
                         New to Ohogar? Let’s get you started
                       </p>
-                      <p className="text-white text-end mb-0">
+
+                    {token ? '' : <p className="text-white text-end mb-0">
                         Existing User?
-                        <br /> Login Here
-                      </p>
+                        <br /> <b onClick={goTOlogin} className="pointer" style={{color: '#EEBD62'}}>Login Here</b>
+                      </p>  }  
+                    
                     </div>
 
-                    <Form className="form-style">
+                    <Form className="form-style mt-4">
                       <p className="text-white">Property Type</p>
                       <div className="mb-3 d-flex check-off g-20">
                         <Form.Check
@@ -172,7 +191,7 @@ const ListProperty = () => {
                         <Button className="w-100 mt-4" type="submit">
                           Next, add address & Price
                         </Button>
-                      </Link> : <Button className="w-100 mt-4" type="submit">
+                      </Link> : <Button onClick={goTOlogin} className="w-100 mt-4">
                           Next, add address & Price
                         </Button> }
                      

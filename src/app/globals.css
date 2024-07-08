@@ -693,7 +693,17 @@ button.btn-login {
 .modal-content {
     border-radius: 20px!important
 }
-
+button.close {
+    background: none;
+    border-radius: 34px;
+    width: 28px;
+    height: 28px;
+    color: #7985eb;
+    font-weight: 600;
+    margin-right: 10px;
+    border-color: #7985eb;
+    display: none;
+}
 button.start-btn {
     background: #313265;
     color: #fff;
@@ -992,6 +1002,12 @@ line-height: 30.5px;
 }
 
 @media (max-width:767px) {
+    section.banner-buy {
+        max-width: 100%;
+    }
+    button.close{
+        display: inline;
+    }
     .sidebar-itmes{
         width: 22%;
       }
@@ -1026,7 +1042,7 @@ line-height: 30.5px;
     }
 
     .Sidebar_sidebar__L4cGt {
-        width: 96%!important
+        width: 100%!important
     }
 
     .banner-buy {

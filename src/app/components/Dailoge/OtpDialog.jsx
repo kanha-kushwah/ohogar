@@ -55,10 +55,13 @@ const OtpDialog = ({ show, handleClose, handleShowMultiForm }) => {
       if (response.data.success) {
         toast.success(response.data.message);
         handleClose();
-        handleShowMultiForm();
         dispatch(addUser(response.data));
         dispatch(addToken(response.data.data.token));
         setOtp("");
+        if( handleShowMultiForm()){
+          handleShowMultiForm();
+        }
+      
       } else {
         toast.error(response.data.message);
       }

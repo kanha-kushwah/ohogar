@@ -38,7 +38,7 @@ const Viewmap = () => {
         <Map selectedPOI={selectedPOI} setSelectedPOI={setSelectedPOI} />
         <PointsOfInterest onPOIClick={handlePOIClick} />
 
-        <div className="d-flex justify-content-between align-items-center pb-2 pt-0">
+        <div className="d-flex  justify-content-between align-items-center pb-2 pt-0">
           <div>
             <h6 className="big-heading text-black mb-0">
               Explore Neighbourhood - Map View
@@ -60,7 +60,7 @@ const Viewmap = () => {
             style={{ width: "100%", height: "100%" }}
           />
 
-          <div className="d-flex items-center justify-content-between g-20  ">
+          <div className="flex-wrap d-flex items-center justify-content-between g-20  ">
             <div className="appart-inner">
               <b>21</b> <p>Societies</p>{" "}
             </div>

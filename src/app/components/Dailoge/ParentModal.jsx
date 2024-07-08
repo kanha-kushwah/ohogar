@@ -29,7 +29,7 @@ const ParentModal = () => {
     <div>
       <Login show={showLogin} handleClose={handleCloseLogin} handleShowOtp={handleShowOtp} />
       <OtpDialog show={showOtp} handleClose={handleCloseOtp} handleShowMultiForm={handleShowMultiForm}  handleShowProperty={handleShowProperty}  />
-      <Sidebar handleShow={handleShowLogin} />
+      <Sidebar handleShow={handleShowLogin}  />
       <MultiFormDialog show={showMultiForm} handleClose={handleCloseMultiForm} />
       <Postproperty show={showPostProperty} handleClose={handleCloseProperty} />
     </div>

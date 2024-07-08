@@ -179,7 +179,7 @@ const CompareProperties = () => {
       <div>
         <h6 className="big-heading text-black">Compare Properties</h6>
         <PropertySearch addProperty={addProperty} />
-        <div className='d-flex g-20'>
+        <div className='d-flex g-20 flex-wrap'>
           {renderProperty(properties[0])}
           {properties[1] ? renderProperty(properties[1]) : renderPlaceholder(1)}
           {properties[2] ? renderProperty(properties[2]) : renderPlaceholder(2)}

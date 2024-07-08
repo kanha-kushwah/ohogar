@@ -10,7 +10,7 @@ const Brochure = () => {
         </div>
 
 
-<div className="d-flex flex-col g-20 mt-4 relatve">
+<div className="d-flex flex-col g-20 mt-4 flex-wrap relatve">
     <Image src={"/img/single/medium.jpg"} alt="" height={233} width={311} />
     <Image src={"/img/single/medium.png"} alt="" height={233} width={311} />
 
