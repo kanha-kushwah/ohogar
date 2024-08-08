@@ -1,3 +1,18 @@
+.after-line{
+  position: relative;
+}
+
+.after-line:after {
+  content: "";
+  position: absolute;
+  right: -115px;
+  height: 48px;
+  border: 1px solid #DFDEDE;
+  top: 0px;
+}
+
+
+
 p.small-box {
   border: 1.31px solid #ffe01f;
   background: #fffceb;
